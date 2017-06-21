@@ -1,6 +1,0 @@
-c:\users\admin\documents\visual studio 2015\Projects\PrintNumbers\PrintNumbers\bin\Debug\PrintNumbers.exe.config
-c:\users\admin\documents\visual studio 2015\Projects\PrintNumbers\PrintNumbers\bin\Debug\PrintNumbers.exe
-c:\users\admin\documents\visual studio 2015\Projects\PrintNumbers\PrintNumbers\bin\Debug\PrintNumbers.pdb
-c:\users\admin\documents\visual studio 2015\Projects\PrintNumbers\PrintNumbers\obj\Debug\PrintNumbers.csprojResolveAssemblyReference.cache
-c:\users\admin\documents\visual studio 2015\Projects\PrintNumbers\PrintNumbers\obj\Debug\PrintNumbers.exe
-c:\users\admin\documents\visual studio 2015\Projects\PrintNumbers\PrintNumbers\obj\Debug\PrintNumbers.pdb
