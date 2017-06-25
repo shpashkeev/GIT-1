@@ -9,23 +9,23 @@ namespace CheckSequence
         {
             try
             {
-                // User must specify the size of sequence
-                Console.Write("Enter size of sequence: ");
-                int n = int.Parse(Console.ReadLine());
-                
-                Console.WriteLine("Enter elements of sequence:");
-                int[] sequence = new int[n];
+                // User read elements of sequence
+                Console.Write("Enter sequence with splits: ");
+                string[] stringSequence = Console.ReadLine().Split();
+
+                int sizeOfSequence = stringSequence.Length;
+                int[] sequence = new int[sizeOfSequence];
 
                 bool check = false;
 
-                for (int i = 0; i < n; i++)
+                for (int i = 0; i < sizeOfSequence; i++)
                 {
-                    // User enter the elements with the new line
-                    sequence[i] = int.Parse(Console.ReadLine());
+                    // Parse stringSequence element to int sequence
+                    sequence[i] = int.Parse(stringSequence[i]);
                 }
 
                 // Cycle for testing sequence on non-decreasing
-                for (int j = 0; j < (n - 1); j++)
+                for (int j = 0; j < (sizeOfSequence - 1); j++)
                 {
                     if (sequence[j + 1] < sequence[j])
                     {
