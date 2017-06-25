@@ -2,10 +2,8 @@
 
 namespace CheckOnFibonacci
 {
-    class Program
+    class Fibonacci
     {
-        // This function checks if the entered number is a positive Fibonacci number
-        // and checks the correctness of the number input
         static void Main(string[] args)
         {
             // do-while cycle for re-enter numbers
