@@ -2,7 +2,6 @@
 
 namespace CheckSequence
 {
-
     class Runner
     {
         static void Main(string[] args)
@@ -35,7 +34,7 @@ namespace CheckSequence
 							break;
 						}
 					}
-					if (check)
+					if (check == true)
 					{
 						Console.WriteLine("This sequence is not non-decreasing");
 					}
