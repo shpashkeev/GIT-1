@@ -4,6 +4,11 @@ namespace CheckSequence
 {
     class Runner
     {
+        const string ENTER_LINE = "Enter sequence with splits: ";
+        const string ANSWER_NO = "This sequence is not non-decreasing";
+        const string ANSWER_YES = "This sequence is non-decreasing";
+        const string CHOICE = "Press Esc to exit, or any key to continue";
+
         static void Main(string[] args)
         {
             do
@@ -11,7 +16,7 @@ namespace CheckSequence
                 try
                 {
                     // User read elements of sequence
-                    Console.Write("Enter sequence with splits: ");
+                    Console.Write(ENTER_LINE);
                     string[] stringSequence = Console.ReadLine().Split();
 
                     int sizeOfSequence = stringSequence.Length;
@@ -36,18 +41,18 @@ namespace CheckSequence
                     }
                     if (check == true)
                     {
-                        Console.WriteLine("This sequence is not non-decreasing");
+                        Console.WriteLine(ANSWER_NO);
                     }
                     else
                     {
-                        Console.WriteLine("This sequence is non-decreasing");
+                        Console.WriteLine(ANSWER_YES);
                     }
                 }
                 catch (Exception exc)
                 {
                     Console.WriteLine("Exception: " + exc);
                 }
-                Console.WriteLine("Press Esc to exit, or any key to continue");
+                Console.WriteLine(CHOICE);
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
     }
