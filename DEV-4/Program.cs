@@ -43,13 +43,13 @@ namespace CheckSequence
 					{
 						Console.WriteLine("This sequence is non-decreasing");
 					}
-					Console.WriteLine("Press Esc to exit, or any key to continue");
 				}
 				catch(Exception exc)
 				{
 					Console.WriteLine("Exception: " + exc);
 				}
-			} while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+                Console.WriteLine("Press Esc to exit, or any key to continue");
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
     }
 }
