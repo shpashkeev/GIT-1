@@ -6,8 +6,8 @@ namespace CheckSequence
     {
         static void Main(string[] args)
         {
-			do
-			{
+            do
+            {
 				try
 				{
 					// User read elements of sequence
