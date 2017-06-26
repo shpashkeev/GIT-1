@@ -3,7 +3,7 @@
 namespace CheckSequence
 {
 
-    class CheckSequence
+    class Runner
     {
         static void Main(string[] args)
         {
