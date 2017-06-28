@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintNumbers", "DEV-1\Print
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckOnFibonacci", "DEV-3\CheckOnFibonacci.csproj", "{7E1757BF-FC62-4572-A08B-07A337FB8752}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckSequence", "DEV-4\CheckSequence.csproj", "{C9113B91-2F67-44AF-86A5-E3DB1006DAEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7E1757BF-FC62-4572-A08B-07A337FB8752}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E1757BF-FC62-4572-A08B-07A337FB8752}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E1757BF-FC62-4572-A08B-07A337FB8752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9113B91-2F67-44AF-86A5-E3DB1006DAEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9113B91-2F67-44AF-86A5-E3DB1006DAEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9113B91-2F67-44AF-86A5-E3DB1006DAEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9113B91-2F67-44AF-86A5-E3DB1006DAEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
