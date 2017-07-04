@@ -14,19 +14,8 @@ namespace CheckSequence
       {
         try
         {
-          bool check = false;
-          int[] sequence = (new Inputer()).SequenceReturn(args);
-
-          // Cycle for testing sequence on non-decreasing
-          for (int j = 0; j < (sequence.Length - 1); j++)
-          {
-            if (sequence[j + 1] < sequence[j])
-            {
-              check = true;
-              break;
-            }
-          }
-          if (check == true)
+          int[] sequence = (new Inputer()).ReturnIntSequence(args);
+          if (new Checker().IsNonDecreasing(sequence))
           {
             Console.WriteLine(ANSWER_NO);
           }
