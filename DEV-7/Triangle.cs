@@ -1,0 +1,52 @@
+﻿using System;
+
+namespace TypeOfTriangle
+{
+  // This class descibes a triangle
+  // And contain method that automatically determines the type of triangle that is created
+  class Triangle
+  {
+    const string USUAL = "Usual";
+    const string EQUILATERALOR = "Equilateralor";
+    const string ISOSCELES = "Isosceles";
+    const double EPSILON = 10e-6;
+
+    public double SideA
+    { get; }
+
+    public double SideB
+    { get; }
+
+    public double SideC
+    { get; }
+
+    public string Type
+    { get; }
+
+    public Triangle(double sideA, double sideB, double sideC)
+    {
+      SideA = sideA;
+      SideB = sideB;
+      SideC = sideC;
+      Type = setType();
+    }
+
+    private string setType()
+    {
+      // Condition for an equilateralor triangle
+      if (Math.Abs(SideA - SideB) < EPSILON && Math.Abs(SideB - SideC) < EPSILON)
+      {
+        return EQUILATERALOR;
+      }
+
+      // Condition for an isosceles triangle
+      if (Math.Abs(SideA - SideB) < EPSILON || Math.Abs(SideA - SideC) < EPSILON || Math.Abs(SideB - SideC) < EPSILON)
+      {
+        return ISOSCELES;
+      }
+
+      // Default type of triangle
+      return USUAL;
+    }
+  }
+}
