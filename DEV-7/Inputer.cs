@@ -9,17 +9,18 @@ namespace TypeOfTriangle
     const string INPUT = "Enter values of sides:";
     const string DONOTEXIST = "Triangle with such sides does not exist. Please, try again";
     const string CL_INPUT_ERROR = "Bad value, try again";
+    const int SIDES = 3;
 
     // Method return array with permitted values
     public double[] Values()
     {
-      double[] values = new double[3];
+      double[] values = new double[SIDES];
       bool validate = false;
       do
       {
         Console.WriteLine(INPUT);
         int i = 0;
-        while (i < 3)
+        while (i < SIDES)
         {
           if (double.TryParse(Console.ReadLine(), out values[i]) && values[i] > 0)
           {

@@ -23,11 +23,11 @@ namespace TypeOfTriangle
     public string Type
     { get; }
 
-    public Triangle(double sideA, double sideB, double sideC)
+    public Triangle(double[] sides)
     {
-      SideA = sideA;
-      SideB = sideB;
-      SideC = sideC;
+      SideA = sides[0];
+      SideB = sides[1];
+      SideC = sides[2];
       Type = setType();
     }
 

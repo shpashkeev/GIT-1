@@ -13,7 +13,7 @@ namespace TypeOfTriangle
         try
         {
           double[] valuesOfSides = (new Inputer()).Values();
-          Triangle testTriangle = new Triangle(valuesOfSides[0], valuesOfSides[1], valuesOfSides[2]);
+          Triangle testTriangle = new Triangle(valuesOfSides);
           Console.WriteLine("This triangle is " + testTriangle.Type);
         }
         catch (Exception exc)
