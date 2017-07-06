@@ -3,7 +3,6 @@
 namespace TypeOfTriangle
 {
   // Class then contains method to return in main programm array with double values for sides of the triangle
-  // And method fot checking the condition of existence of a triangle
   class InputerForTriangleSides
   {
     const string INPUT = "Enter values of sides:";

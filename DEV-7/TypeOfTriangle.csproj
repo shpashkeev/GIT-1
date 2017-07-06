@@ -43,10 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Inputer.cs" />
+    <Compile Include="DetectorTriangleType.cs" />
+    <Compile Include="EquilateralorTriangle.cs" />
+    <Compile Include="InputerForTriangleSides.cs" />
+    <Compile Include="IsoscelesTriangle.cs" />
+    <Compile Include="NotExistentTrianlge.cs" />
     <Compile Include="Runner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Triangle.cs" />
+    <Compile Include="TriangleBuilder.cs" />
+    <Compile Include="UsualTriangle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

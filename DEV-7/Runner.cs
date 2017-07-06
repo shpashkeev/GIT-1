@@ -2,6 +2,15 @@
 
 namespace TypeOfTriangle
 {
+  // Enumeration with types of triangles
+  enum TypeOfTriangles
+  {
+    NotExistent,
+    Equilateralor,
+    Isosceles,
+    Usual
+  }
+
   class Runner
   {
     const string CHOICE = "\nPress Esc to exit, or any key to continue";
@@ -13,8 +22,8 @@ namespace TypeOfTriangle
         try
         {
           double[] valuesOfSides = (new InputerForTriangleSides()).Values();
-          Triangle testTriangle = new Triangle(valuesOfSides);
-          Console.WriteLine("This triangle is " + testTriangle.Type);
+          Triangle testTriangle = (new TriangleBuilder()).Build(valuesOfSides);
+          Console.WriteLine("This triangle is " + testTriangle.Type());
         }
         catch (Exception exc)
         {
