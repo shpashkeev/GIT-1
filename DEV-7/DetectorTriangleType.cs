@@ -16,7 +16,9 @@ namespace TypeOfTriangle
       sideC = sides[2];
 
       // Condition of existance
-      if (!(sideA + sideB >= sideC && sideB + sideC >= sideA && sideA + sideC >= sideB))
+      if (!(Math.Abs(sideA + sideB - sideC) > EPSILON &&
+        Math.Abs(sideB + sideC - sideA) > EPSILON &&
+        Math.Abs(sideA + sideC - sideB) > EPSILON))
       {
         return TypeOfTriangles.NotExistent;
       }
@@ -28,7 +30,9 @@ namespace TypeOfTriangle
       }
 
       // Condition for an isosceles triangle
-      if (Math.Abs(sideA - sideB) < EPSILON || Math.Abs(sideA - sideC) < EPSILON || Math.Abs(sideB - sideC) < EPSILON)
+      if (Math.Abs(sideA - sideB) < EPSILON ||
+        Math.Abs(sideA - sideC) < EPSILON ||
+        Math.Abs(sideB - sideC) < EPSILON)
       {
         return TypeOfTriangles.Isosceles;
       }
