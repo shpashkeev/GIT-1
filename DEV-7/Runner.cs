@@ -12,7 +12,7 @@ namespace TypeOfTriangle
       {
         try
         {
-          double[] valuesOfSides = (new Inputer()).Values();
+          double[] valuesOfSides = (new InputerForTriangleSides()).Values();
           Triangle testTriangle = new Triangle(valuesOfSides);
           Console.WriteLine("This triangle is " + testTriangle.Type);
         }

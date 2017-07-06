@@ -9,6 +9,7 @@ namespace TypeOfTriangle
     const string USUAL = "Usual";
     const string EQUILATERALOR = "Equilateralor";
     const string ISOSCELES = "Isosceles";
+    const string DONOTEXIST = "Triangle with such sides does not exist";
     const double EPSILON = 10e-6;
 
     public double SideA
@@ -33,6 +34,12 @@ namespace TypeOfTriangle
 
     private string setType()
     {
+      // Condition of existance
+      if (!(SideA + SideB >= SideC && SideB + SideC >= SideA && SideA + SideC >= SideB))
+      {
+        return DONOTEXIST;
+      }
+
       // Condition for an equilateralor triangle
       if (Math.Abs(SideA - SideB) < EPSILON && Math.Abs(SideB - SideC) < EPSILON)
       {
