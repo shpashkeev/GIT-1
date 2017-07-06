@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace TypeOfTriangle
 {
   // Absract class Triangle without type
@@ -15,13 +17,20 @@ namespace TypeOfTriangle
 
     public Triangle(double[] sides)
     {
-      SideA = sides[0];
-      SideB = sides[1];
-      SideC = sides[2];
+      try
+      {
+        SideA = sides[0];
+        SideB = sides[1];
+        SideC = sides[2];
+      }
+      catch
+      {
+        Console.WriteLine("Triangle creation error");
+      }
     }
 
     // Abstract method then return type of Triangle in child classes
-    public abstract string Type();
+    public abstract TypeOfTriangles Type();
 
   }
 }

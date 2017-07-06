@@ -3,13 +3,11 @@ namespace TypeOfTriangle
 {
   class NotExistentTriangle : Triangle
   {
-    const string NOTEXISTENT = "Not-Existent";
-
     public NotExistentTriangle(double[] sides) : base(sides) { }
 
-    public override string Type()
+    public override TypeOfTriangles Type()
     {
-      return NOTEXISTENT;
+      return TypeOfTriangles.NotExistent;
     }
   }
 }

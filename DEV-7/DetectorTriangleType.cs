@@ -11,34 +11,39 @@ namespace TypeOfTriangle
 
     public TypeOfTriangles GetTriangleType(double[] sides)
     {
-      sideA = sides[0];
-      sideB = sides[1];
-      sideC = sides[2];
+      try
+      {
+        sideA = sides[0];
+        sideB = sides[1];
+        sideC = sides[2];
 
-      // Condition of existance
-      if (!(Math.Abs(sideA + sideB - sideC) > EPSILON &&
-        Math.Abs(sideB + sideC - sideA) > EPSILON &&
-        Math.Abs(sideA + sideC - sideB) > EPSILON))
+        // Condition of existance
+        if (!(sideA + sideB >= sideC && sideB + sideC >= sideA && sideA + sideC >= sideB))
+        {
+          return TypeOfTriangles.NotExistent;
+        }
+
+        // Condition for an equilateralor triangle
+        if (Math.Abs(sideA - sideB) < EPSILON && Math.Abs(sideB - sideC) < EPSILON)
+        {
+          return TypeOfTriangles.Equilateralor;
+        }
+
+        // Condition for an isosceles triangle
+        if (Math.Abs(sideA - sideB) < EPSILON ||
+          Math.Abs(sideA - sideC) < EPSILON ||
+          Math.Abs(sideB - sideC) < EPSILON)
+        {
+          return TypeOfTriangles.Isosceles;
+        }
+
+        // Default type of triangle
+        return TypeOfTriangles.Usual;
+      }
+      catch
       {
         return TypeOfTriangles.NotExistent;
-      }
-
-      // Condition for an equilateralor triangle
-      if (Math.Abs(sideA - sideB) < EPSILON && Math.Abs(sideB - sideC) < EPSILON)
-      {
-        return TypeOfTriangles.Equilateralor;
-      }
-
-      // Condition for an isosceles triangle
-      if (Math.Abs(sideA - sideB) < EPSILON ||
-        Math.Abs(sideA - sideC) < EPSILON ||
-        Math.Abs(sideB - sideC) < EPSILON)
-      {
-        return TypeOfTriangles.Isosceles;
-      }
-
-      // Default type of triangle
-      return TypeOfTriangles.Usual;
+      }      
     }
   }
 }
