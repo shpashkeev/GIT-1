@@ -27,7 +27,7 @@ namespace TypeOfTriangle
         }
         catch (Exception exc)
         {
-          Console.WriteLine("Exception: " + exc);
+          Console.WriteLine("Exception: " + exc.Message);
         }
         Console.WriteLine(CHOICE);
       }
