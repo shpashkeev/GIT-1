@@ -2,7 +2,7 @@
 
 namespace TypeOfTriangle
 {
-  class DetectorTriangleType
+  class TriangleTypeDetector
   {
     private double sideA;
     private double sideB;
@@ -11,7 +11,6 @@ namespace TypeOfTriangle
 
     public TypeOfTriangles GetTriangleType(double[] sides)
     {
-
       sideA = sides[0];
       sideB = sides[1];
       sideC = sides[2];
@@ -19,7 +18,7 @@ namespace TypeOfTriangle
       // Condition of existance
       if (!(sideA + sideB >= sideC && sideB + sideC >= sideA && sideA + sideC >= sideB))
       {
-        return TypeOfTriangles.NotExistent;
+        throw new Exception();
       }
 
       // Condition for an equilateralor triangle

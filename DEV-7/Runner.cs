@@ -5,7 +5,6 @@ namespace TypeOfTriangle
   // Enumeration with types of triangles
   enum TypeOfTriangles
   {
-    NotExistent,
     Equilateralor,
     Isosceles,
     Usual
