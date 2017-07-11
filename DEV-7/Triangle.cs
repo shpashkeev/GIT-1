@@ -23,7 +23,7 @@ namespace TypeOfTriangle
       // Condition of existance
       if (!(sides[0] + sides[1] >= sides[2] && sides[1] + sides[2] >= sides[0] && sides[0] + sides[2] >= sides[1]))
       {
-        throw new Exception("Triangle build exception");
+        throw new TriangleBuildException();
       }
 
       SideA = sides[0];

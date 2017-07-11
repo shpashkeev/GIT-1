@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="EquilateralorTriangleBuilder.cs" />
     <Compile Include="IsoscelesTriangleBuilder.cs" />
+    <Compile Include="TriangleBuildException.cs" />
     <Compile Include="TriangleTypeException.cs" />
     <Compile Include="EquilateralorTriangle.cs" />
     <Compile Include="InputerForTriangleSides.cs" />

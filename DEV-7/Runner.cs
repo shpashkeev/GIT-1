@@ -20,28 +20,15 @@ namespace TypeOfTriangle
       {
         try
         {
-          double[] valuesOfSides = (new InputerForTriangleSides()).Values();
+          double[] sides = (new InputerForTriangleSides()).Values();
           Triangle verifiableTriangle;
 
           // The order of builders is important
-          TriangleBuilder[] triangleBuilders = { new EquilateralorTriangleBuilder(),
-                                                  new IsoscelesTriangleBuilder(),
-                                                  new UsualTriangleBuilder() };
-
-          // Selection cycle for a suitable builder
-          foreach (var builder in triangleBuilders)
-          {
-            try
-            {
-              verifiableTriangle = builder.Build(valuesOfSides);
-              Console.WriteLine(verifiableTriangle.TypeString());
-              break;
-            }
-            catch (TriangleTypeException)
-            {
-              continue;
-            }
-          }
+          TriangleBuilder builder = new EquilateralorTriangleBuilder(
+                                                  new IsoscelesTriangleBuilder(
+                                                    new UsualTriangleBuilder(null)));
+          verifiableTriangle = builder.Build(sides);
+          Console.WriteLine(verifiableTriangle.TypeString());
         }
         catch (Exception exc)
         {
