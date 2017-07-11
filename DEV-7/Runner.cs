@@ -21,8 +21,27 @@ namespace TypeOfTriangle
         try
         {
           double[] valuesOfSides = (new InputerForTriangleSides()).Values();
-          Triangle testTriangle = (new TriangleBuilder()).Build(valuesOfSides);
-          Console.WriteLine("This triangle is " + testTriangle.Type());
+          Triangle verifiableTriangle;
+
+          // The order of builders is important
+          TriangleBuilder[] triangleBuilders = { new EquilateralorTriangleBuilder(),
+                                                  new IsoscelesTriangleBuilder(),
+                                                  new UsualTriangleBuilder() };
+
+          // Selection cycle for a suitable builder
+          foreach (var builder in triangleBuilders)
+          {
+            try
+            {
+              verifiableTriangle = builder.Build(valuesOfSides);
+              Console.WriteLine(verifiableTriangle.TypeString());
+              break;
+            }
+            catch (TriangleTypeException)
+            {
+              continue;
+            }
+          }
         }
         catch (Exception exc)
         {

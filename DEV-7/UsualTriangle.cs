@@ -9,5 +9,10 @@ namespace TypeOfTriangle
     {
       return TypeOfTriangles.Usual;
     }
+
+    public override string TypeString()
+    {
+      return THISTRIANGLE + Type();
+    }
   }
 }
