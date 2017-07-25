@@ -1,7 +1,7 @@
 ﻿
 namespace TypeOfTriangle
 {
-  class UsualTriangle : Triangle
+  public class UsualTriangle : Triangle
   {
     public UsualTriangle(double[] sides) : base(sides) { }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace TypeOfTriangle
 {
-  abstract class TriangleBuilder
+  public abstract class TriangleBuilder
   {
     protected TriangleBuilder successor;
 

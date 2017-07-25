@@ -4,7 +4,7 @@ using System;
 namespace TypeOfTriangle
 {
   // Absract class Triangle without type
-  abstract class Triangle
+  public abstract class Triangle
   {
     protected const double EPSILON = 10e-6;
     protected const string THISTRIANGLE = "This triangle is ";
