@@ -9,7 +9,7 @@ namespace TypeOfTriangle.Test
   {
     public TestContext TestContext { get; set; }
 
-    private const string connectionStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=ValidDataForTriangle.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES\";";
+    private const string connectionStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\ValidDataForTriangle.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES\";";
 
     [TestMethod]
     [DataSource(connectionStr,"Usual$")]

@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -54,7 +55,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ValidDataForTriangle.xlsx" />
+    <Resource Include="ValidDataForTriangle.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DEV-7\TypeOfTriangle.csproj">
+      <Project>{E0131DEE-6E34-4187-BB7F-BEC16F484BA5}</Project>
+      <Name>TypeOfTriangle</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
