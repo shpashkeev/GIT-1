@@ -3,7 +3,7 @@
 namespace TypeOfTriangle
 {
   // Enumeration with types of triangles
-  enum TypeOfTriangles
+  public enum TypeOfTriangles
   {
     Equilateralor,
     Isosceles,
