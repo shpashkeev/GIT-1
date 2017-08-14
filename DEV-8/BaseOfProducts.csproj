@@ -44,7 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="ListProductsCommander.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductBuilder.cs" />
+    <Compile Include="ProductParamsInputer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

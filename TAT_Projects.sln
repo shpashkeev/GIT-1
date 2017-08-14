@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckSequence", "DEV-4\Chec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeOfTriangle", "DEV-7\TypeOfTriangle.csproj", "{E0131DEE-6E34-4187-BB7F-BEC16F484BA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseOfProducts", "BaseOfProducts\BaseOfProducts.csproj", "{CA5FD39C-18EA-47BA-A831-9E009FC09406}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseOfProducts", "DEV-8\BaseOfProducts.csproj", "{CA5FD39C-18EA-47BA-A831-9E009FC09406}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

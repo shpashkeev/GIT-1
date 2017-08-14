@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BaseOfProducts
 {
@@ -49,7 +45,7 @@ namespace BaseOfProducts
       double price = 0.0;
       while (checker)
       {
-        Console.WriteLine(COUNT);
+        Console.WriteLine(PRICE);
         checker = Double.TryParse(Console.ReadLine(), out price);
         if (checker)
         {
