@@ -41,17 +41,17 @@ namespace BaseOfProducts
 
     public double PriceInput()
     {
-      bool checker = true;
+      bool checker = false;
       double price = 0.0;
-      while (checker)
+      while (!checker)
       {
         Console.WriteLine(PRICE);
         checker = Double.TryParse(Console.ReadLine(), out price);
-        if (checker)
+        if (!checker)
         {
-          break;
+          Console.WriteLine(BAD_VALUE);
         }
-        Console.WriteLine(BAD_VALUE);
+
       }
       return price;
     }

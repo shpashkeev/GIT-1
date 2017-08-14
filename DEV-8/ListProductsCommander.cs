@@ -19,14 +19,23 @@ namespace BaseOfProducts
     private string[] Commands = {COUNT_TYPES, COUNT_ALL, AVERAGE_PRICE, EXIT};
 
     private int CountTypes(List<Product> products)
-    {
-      HashSet<Product> hashSetProducts = new HashSet<Product>(products);
-      return hashSetProducts.Count;
+    { 
+      HashSet<string> types = new HashSet<string>();
+      foreach (var product in products)
+      {
+        types.Add(product.Type);
+      }
+      return types.Count;
     }
 
     private int CountAll(List<Product> products)
     {
-      return products.Count;
+      int count = 0;
+      foreach (var product in products)
+      {
+        count += product.Count;
+      }
+      return count;
     }
     private double AveragePrice(List<Product> products, IEnumerable<string> args)
     {
@@ -70,16 +79,17 @@ namespace BaseOfProducts
         switch (command)
         {
           case COUNT_TYPES:
-            CountTypes(products);
+            Console.WriteLine(COUNT_TYPES + CountTypes(products));
             break;
           case COUNT_ALL:
-            CountAll(products);
+            Console.WriteLine(COUNT_ALL + CountAll(products));
             break;
           case AVERAGE_PRICE:
-            AveragePrice(products,args);
+            Console.WriteLine(AVERAGE_PRICE + AveragePrice(products, args));
             break;
           case EXIT:
             run = false;
+            Console.WriteLine("Goodbye!");
             break;
           default:
             Console.WriteLine(COMMAND_NOT_FOUND);
