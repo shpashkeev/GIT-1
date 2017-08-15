@@ -9,17 +9,21 @@ namespace BaseOfProducts
   class ListProductsCommander
   {
     private const string PROMPT = ">";
-    private const string COMMAND_NOT_FOUND = "Not found such command";
+    private const string WELCOME = "Welcome to ProductBase Commander!";
+    private const string COMMAND_NOT_FOUND = "Not found such command. Enter HELP to display possible commands";
+    private const string EMPTY = "Empty storage. Cannot run!";
 
     private const string COUNT_TYPES = "count types";
     private const string COUNT_ALL = "count all";
     private const string AVERAGE_PRICE = "average price";
+    private const string AVERAGE_PRICE_TYPE = "average price 'type'";
     private const string EXIT = "exit";
+    private const string HELP = "help";
 
-    private string[] Commands = {COUNT_TYPES, COUNT_ALL, AVERAGE_PRICE, EXIT};
+    private string[] Commands = { COUNT_TYPES, COUNT_ALL, AVERAGE_PRICE,AVERAGE_PRICE_TYPE, EXIT, HELP };
 
     private int CountTypes(List<Product> products)
-    { 
+    {
       HashSet<string> types = new HashSet<string>();
       foreach (var product in products)
       {
@@ -42,7 +46,6 @@ namespace BaseOfProducts
       double result = 0.0;
       if (args.Any())
       {
-
         string type = string.Join(" ", args);
         var productsWithType = products.FindAll(product => product.Type.Equals(type));
         foreach (var pwt in productsWithType)
@@ -58,10 +61,22 @@ namespace BaseOfProducts
       return result / products.Count;
     }
 
+    private void Help()
+    {
+      foreach (var command in Commands)
+      {
+        Console.WriteLine(command);
+      }
+    }
 
     public void Run(List<Product> products)
     {
       bool run = true;
+      if (!products.Any())
+      {
+        throw new Exception(EMPTY);
+      }
+      Console.WriteLine(WELCOME);
       while (run)
       {
         Console.Write(PROMPT);
@@ -79,26 +94,26 @@ namespace BaseOfProducts
         switch (command)
         {
           case COUNT_TYPES:
-            Console.WriteLine(COUNT_TYPES + CountTypes(products));
+            Console.WriteLine(CountTypes(products));
             break;
           case COUNT_ALL:
-            Console.WriteLine(COUNT_ALL + CountAll(products));
+            Console.WriteLine(CountAll(products));
             break;
           case AVERAGE_PRICE:
-            Console.WriteLine(AVERAGE_PRICE + AveragePrice(products, args));
+            Console.WriteLine(AveragePrice(products, args));
             break;
           case EXIT:
             run = false;
             Console.WriteLine("Goodbye!");
             break;
+          case HELP:
+            Help();
+            break;
           default:
             Console.WriteLine(COMMAND_NOT_FOUND);
             break;
         }
-
-
       }
-
     }
 
     private static IEnumerable<string> SplitIntoTokens(string s)
@@ -107,3 +122,4 @@ namespace BaseOfProducts
     }
   }
 }
+
