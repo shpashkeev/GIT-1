@@ -7,8 +7,8 @@
     <ProjectGuid>{CA5FD39C-18EA-47BA-A831-9E009FC09406}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BaseOfProducts</RootNamespace>
-    <AssemblyName>BaseOfProducts</AssemblyName>
+    <RootNamespace>ProductsStorage</RootNamespace>
+    <AssemblyName>ProductsStorage</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="ListProductsCommander.cs" />
+    <Compile Include="StorageCommander.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductBuilder.cs" />
     <Compile Include="ProductParamsInputer.cs" />

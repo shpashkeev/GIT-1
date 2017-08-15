@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BaseOfProducts
+namespace ProductsStorage
 {
-  public class ListProductsCommander
+  public class StorageCommander
   {
     // Command-line messages
     private const string PROMPT = ">";

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BaseOfProducts
+namespace ProductsStorage
 {
   class EntryPoint
   {
@@ -13,14 +13,14 @@ namespace BaseOfProducts
         List<Product> products = new List<Product>();
         ProductBuilder productBuilder = new ProductBuilder();
         ProductParamsInputer productParamsInputer = new ProductParamsInputer();
-        ListProductsCommander productsCommander = new ListProductsCommander();
+        StorageCommander storageCommander = new StorageCommander();
 
         do
         {
           products.Add(productBuilder.Build(productParamsInputer.TypeInput(), productParamsInputer.NameInput(), productParamsInputer.CountInput(), productParamsInputer.PriceInput()));
           Console.WriteLine(CHOICE);
         } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
-        productsCommander.Run(products);
+        storageCommander.Run(products);
       }
       catch (Exception exc)
       {

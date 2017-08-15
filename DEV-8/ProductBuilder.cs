@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BaseOfProducts
+namespace ProductsStorage
 {
   public class ProductBuilder
   {
