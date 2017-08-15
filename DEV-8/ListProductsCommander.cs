@@ -22,7 +22,7 @@ namespace BaseOfProducts
     private const string EXIT = "exit";
     private const string HELP = "help";
 
-    private readonly string[] Commands = { COUNT_TYPES, COUNT_ALL, AVERAGE_PRICE,AVERAGE_PRICE_TYPE, EXIT, HELP };
+    private readonly string[] Commands = { COUNT_TYPES, COUNT_ALL, AVERAGE_PRICE, AVERAGE_PRICE_TYPE, EXIT, HELP };
 
     private int CountTypes(List<Product> products)
     {
@@ -130,11 +130,6 @@ namespace BaseOfProducts
             break;
         }
       }
-    }
-
-    private static IEnumerable<string> SplitIntoTokens(string s)
-    {
-      return s.Split(null as char[], StringSplitOptions.RemoveEmptyEntries);
     }
   }
 }
