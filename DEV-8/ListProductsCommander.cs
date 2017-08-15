@@ -10,6 +10,7 @@ namespace BaseOfProducts
     private const string PROMPT = ">";
     private const string WELCOME = "Welcome to ProductBase Commander!";
     private const string COMMAND_NOT_FOUND = "Not found such command. Enter help to display possible commands";
+    private const string PRODUCTS_NOT_FOUND = "Not found such product. Displayed average price";
     private const string EMPTY = "Empty storage. Cannot run!";
     private const string GOODBYE = "Goodbye!";
 
@@ -51,7 +52,7 @@ namespace BaseOfProducts
       double result = 0.0;
 
       // If user entered command like "average price type"
-      if (arg.Any())
+      if (arg.Any() && products.Exists(product => product.Type.Equals(arg)))
       {
 
         var productsWithType = products.FindAll(product => product.Type.Equals(arg));
@@ -60,6 +61,10 @@ namespace BaseOfProducts
           result += product.Price;
         }
         return result / productsWithType.Count;
+      }
+      if (arg.Any() && !(products.Exists(product => product.Type.Equals(arg))))
+      {
+        Console.WriteLine(PRODUCTS_NOT_FOUND);
       }
       // User entered command "average price"
       foreach (var product in products)
