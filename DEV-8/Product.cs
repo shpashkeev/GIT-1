@@ -2,7 +2,7 @@
 
 namespace BaseOfProducts
 {
-  class Product
+  public class Product
   {
     public string Type { get; }
     public string Name { get; }

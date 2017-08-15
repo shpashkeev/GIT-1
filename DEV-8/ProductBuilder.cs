@@ -2,7 +2,7 @@
 
 namespace BaseOfProducts
 {
-  class ProductBuilder
+  public class ProductBuilder
   {
     private const string BUILD_ERROR = "Product build error";
 
@@ -12,7 +12,7 @@ namespace BaseOfProducts
       {
         return new Product(type, name, count, price);
       }
-      catch (ArgumentException)
+      catch (Exception)
       {
         throw new Exception(BUILD_ERROR);
       }

@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BaseOfProducts
 {
-  class ListProductsCommander
+  public class ListProductsCommander
   {
     private const string PROMPT = ">";
     private const string WELCOME = "Welcome to ProductBase Commander!";
-    private const string COMMAND_NOT_FOUND = "Not found such command. Enter HELP to display possible commands";
+    private const string COMMAND_NOT_FOUND = "Not found such command. Enter help to display possible commands";
     private const string EMPTY = "Empty storage. Cannot run!";
 
     private const string COUNT_TYPES = "count types";
@@ -48,9 +46,9 @@ namespace BaseOfProducts
       {
         string type = string.Join(" ", args);
         var productsWithType = products.FindAll(product => product.Type.Equals(type));
-        foreach (var pwt in productsWithType)
+        foreach (var product in productsWithType)
         {
-          result += pwt.Price;
+          result += product.Price;
         }
         return result / productsWithType.Count;
       }
