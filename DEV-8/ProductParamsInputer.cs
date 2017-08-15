@@ -24,17 +24,16 @@ namespace BaseOfProducts
 
     public int CountInput()
     {
-      bool checker = true;
+      bool checker = false;
       int count = 0;
-      while (checker)
+      while (!checker)
       {
         Console.WriteLine(COUNT);
-        checker = Int32.TryParse(Console.ReadLine(),out count);
-        if (checker)
+        checker = Int32.TryParse(Console.ReadLine(), out count);
+        if (!checker || count < Product.MIN_COUNT)
         {
-          break;
+          Console.WriteLine(BAD_VALUE);
         }
-        Console.WriteLine(BAD_VALUE);
       }
       return count;
     }
@@ -47,11 +46,10 @@ namespace BaseOfProducts
       {
         Console.WriteLine(PRICE);
         checker = Double.TryParse(Console.ReadLine(), out price);
-        if (!checker)
+        if (!checker || price < Product.MIN_PRICE)
         {
           Console.WriteLine(BAD_VALUE);
         }
-
       }
       return price;
     }

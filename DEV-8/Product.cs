@@ -43,7 +43,7 @@ namespace BaseOfProducts
       Price = price;
     }
 
-    private const int MIN_COUNT = 0;
-    private const double MIN_PRICE = 0.0;
+    public const int MIN_COUNT = 0;
+    public const double MIN_PRICE = 0.0;
   }
 }
