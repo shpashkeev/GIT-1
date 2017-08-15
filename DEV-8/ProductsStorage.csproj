@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Command.cs" />
     <Compile Include="Commands\AveragePriceCommand.cs" />
-    <Compile Include="Commands\AveragePriceTypeCommand.cs" />
     <Compile Include="Commands\CountAllCommand.cs" />
     <Compile Include="Commands\CountTypesCommand.cs" />
     <Compile Include="Commands\ExitCommand.cs" />
