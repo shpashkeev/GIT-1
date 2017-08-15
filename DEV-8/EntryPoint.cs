@@ -8,12 +8,13 @@ namespace BaseOfProducts
     private const string CHOICE = "Press Esc to end input Products, or any key to continue";
     static void Main(string[] args)
     {
-      List<Product> products = new List<Product>();
-      ProductBuilder productBuilder = new ProductBuilder();
-      ProductParamsInputer productParamsInputer = new ProductParamsInputer();
-      ListProductsCommander productsCommander = new ListProductsCommander();
       try
       {
+        List<Product> products = new List<Product>();
+        ProductBuilder productBuilder = new ProductBuilder();
+        ProductParamsInputer productParamsInputer = new ProductParamsInputer();
+        ListProductsCommander productsCommander = new ListProductsCommander();
+
         do
         {
           products.Add(productBuilder.Build(productParamsInputer.TypeInput(), productParamsInputer.NameInput(), productParamsInputer.CountInput(), productParamsInputer.PriceInput()));

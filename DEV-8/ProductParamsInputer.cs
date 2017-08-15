@@ -33,6 +33,7 @@ namespace BaseOfProducts
         if (!checker || count < Product.MIN_COUNT)
         {
           Console.WriteLine(BAD_VALUE);
+          checker = false;
         }
       }
       return count;
@@ -49,6 +50,7 @@ namespace BaseOfProducts
         if (!checker || price < Product.MIN_PRICE)
         {
           Console.WriteLine(BAD_VALUE);
+          checker = false;
         }
       }
       return price;
