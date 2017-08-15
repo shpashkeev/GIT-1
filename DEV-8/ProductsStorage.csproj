@@ -43,6 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command.cs" />
+    <Compile Include="Commands\AveragePriceCommand.cs" />
+    <Compile Include="Commands\AveragePriceTypeCommand.cs" />
+    <Compile Include="Commands\CountAllCommand.cs" />
+    <Compile Include="Commands\CountTypesCommand.cs" />
+    <Compile Include="Commands\ExitCommand.cs" />
+    <Compile Include="Commands\HelpCommand.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="StorageCommander.cs" />
     <Compile Include="Product.cs" />
