@@ -1,11 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProductsStorage;
 
 namespace ProductsStorage.Tests
 {
   [TestClass]
-  public class ProductBuilderTests
+  public class ProductTests
   {
     private const string TYPE = "type";
     private const string NAME = "name";
@@ -13,17 +12,17 @@ namespace ProductsStorage.Tests
     private const double PRICE = 1.0;
 
     public TestContext TestContext { get; set; }
-    private const string connectionStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\DataSources\\ProductBuilderTestsData.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES\";";
+    private const string connectionStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\DataSources\\ProductTestsData.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES\";";
 
     [TestMethod]
     [DataSource(connectionStr, "Counts$")]
-    [ExpectedException(typeof(Exception))]
+    [ExpectedException(typeof(ArgumentException))]
     public void Build_ProductWithInvalidCountParameter_Exception()
     {
       // arrange
       int count = Convert.ToInt32(TestContext.DataRow["Negative Count"]);
       // act
-      var res = new ProductBuilder().Build(TYPE, NAME, count, PRICE);
+      var res = new Product(TYPE, NAME, count, PRICE);
       // assert
     }
 
@@ -34,20 +33,20 @@ namespace ProductsStorage.Tests
       // arrange
       double price = Convert.ToDouble(TestContext.DataRow["Positive Price"]);
       // act
-      var res = new ProductBuilder().Build(TYPE, NAME, COUNT, price);
+      var res = new Product(TYPE, NAME, COUNT, price);
       // assert
       Assert.IsInstanceOfType(res, typeof(Product));
     }
 
     [TestMethod]
     [DataSource(connectionStr, "Prices$")]
-    [ExpectedException(typeof(Exception))]
+    [ExpectedException(typeof(ArgumentException))]
     public void Build_ProductWithInvalidPriceParameter_IsProduct()
     {
       // arrange
       double price = Convert.ToDouble(TestContext.DataRow["Negative Price"]);
       // act
-      var res = new ProductBuilder().Build(TYPE, NAME, COUNT, price);
+      var res = new Product(TYPE, NAME, COUNT, price);
       // assert
     }
   }

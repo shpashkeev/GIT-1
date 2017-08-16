@@ -53,17 +53,19 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AveragePriceCommandTests.cs" />
     <Compile Include="ProductBuilderTests.cs" />
+    <Compile Include="ProductTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CountAllCommandTests.cs" />
-    <Compile Include="CountTypesCommandTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DEV-8\ProductsStorage.csproj">
       <Project>{CA5FD39C-18EA-47BA-A831-9E009FC09406}</Project>
       <Name>ProductsStorage</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSources\ProductBuilderTestsData.xlsx" />
+    <None Include="DataSources\ProductTestsData.xlsx" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -27,7 +27,7 @@ namespace ProductsStorage
       get { return price; }
       set
       {
-        if (value <= MIN_PRICE)
+        if ((value - MIN_PRICE)<=EPS)
         {
           throw new ArgumentException();
         }
@@ -43,7 +43,13 @@ namespace ProductsStorage
       Price = price;
     }
 
+    public string Info()
+    {
+      return $"Type: {Type} Name: {Name} Count: {Count} Price: {Price}";
+    }
+
     public const int MIN_COUNT = 0;
-    public const double MIN_PRICE = 0.0;
+    public const double MIN_PRICE = 0.0D;
+    private const double EPS = 1e-2;
   }
 }

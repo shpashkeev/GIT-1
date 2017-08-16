@@ -44,8 +44,9 @@ namespace ProductsStorage
       while (run)
       {
         Console.Write(PROMPT);
-        string input = Console.ReadLine();
+
         // Command reading
+        string input = Console.ReadLine();
         string command = input;
         foreach (var comm in Commands)
         {
