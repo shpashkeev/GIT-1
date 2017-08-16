@@ -11,31 +11,29 @@ namespace ProductsStorage.Commands
   {
     private const string PRODUCTS_NOT_FOUND = "Not found such product. Displayed average price";
 
-    public void execute(List<Product> products, string arg)
+    public void execute(List<Product> products, string arg = null)
     {
+      if (!products.Any())
+      {
+        throw new ArgumentNullException();
+      }
       double result = 0.0;
-
+      var tempProductsList = products;
       // If user entered command like "average price type"
       if (arg.Any() && products.Exists(product => product.Type.Equals(arg)))
       {
-
-        var productsWithType = products.FindAll(product => product.Type.Equals(arg));
-        foreach (var product in productsWithType)
-        {
-          result += product.Price;
-        }
-        Console.WriteLine(result / productsWithType.Count);
+        tempProductsList = products.FindAll(product => product.Type.Equals(arg));
       }
       if (arg.Any() && !(products.Exists(product => product.Type.Equals(arg))))
       {
         Console.WriteLine(PRODUCTS_NOT_FOUND);
       }
       // User entered command "average price"
-      foreach (var product in products)
+      foreach (var product in tempProductsList)
       {
         result += product.Price;
       }
-      Console.WriteLine(result / products.Count);
+      Console.WriteLine(result / tempProductsList.Count);
     }
   }
 }

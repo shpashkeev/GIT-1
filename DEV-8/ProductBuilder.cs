@@ -4,7 +4,7 @@ namespace ProductsStorage
 {
   public class ProductBuilder
   {
-    private const string BUILD_ERROR = "Product build error";
+    private const string BUILD_ERROR = "Product building error";
 
     public Product Build(string type, string name, int count, double price)
     {
