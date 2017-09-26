@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ReplacementOfCharacterGroups
 {
-  class EntryPoint
+  public class Replacer
   {
-    static void Main(string[] args)
+    public void Replacement(string firstSequence, string secondSequnce)
     {
+      
     }
   }
 }
