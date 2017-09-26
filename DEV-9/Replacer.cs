@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace ReplacementOfCharacterGroups
 {
   public class Replacer
@@ -18,7 +13,7 @@ namespace ReplacementOfCharacterGroups
       int groupLengthFromFirstSequnce = randomizer.RandomCount(firstSequence, indexInFirstSequence);
       int groupLengthFromSecondSequnce = randomizer.RandomCount(secondSequence, indexInSecondSequence);
 
-      string firstGroup = firstSequence.Substring(indexInFirstSequence, groupLengthFromSecondSequnce);
+      string firstGroup = firstSequence.Substring(indexInFirstSequence, groupLengthFromFirstSequnce);
       string secondGroup = secondSequence.Substring(indexInSecondSequence, groupLengthFromSecondSequnce);
 
       string result = firstSequence.Replace(firstGroup, secondGroup);
