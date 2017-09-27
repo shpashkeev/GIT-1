@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace ReplacementOfCharacterGroups
@@ -12,24 +11,16 @@ namespace ReplacementOfCharacterGroups
     // StreamReader class constructor initializes the encoding to UTF8Encoding.
     public List<string> ReadLines(string path)
     {
-      try
-      {
-        List<string> result = new List<string>();
-        string line;
+      List<string> result = new List<string>();
+      string line;
 
-        using (StreamReader file = new StreamReader(path))
-        {
-          while ((line = file.ReadLine()) != null)
-          {
-            result.Add(line);
-          }
-          return result;
-        }
-      }
-      catch (Exception exc)
+      using (StreamReader file = new StreamReader(path))
       {
-        Console.WriteLine(exc.Message);
-        return null;
+        while ((line = file.ReadLine()) != null)
+        {
+          result.Add(line);
+        }
+        return result;
       }
     }
   }
