@@ -11,7 +11,7 @@ namespace ReplacementOfCharacterGroups
       return random.Next(1, sequence.Length - 1);
     }
 
-    public int RandomCount(string sequence, int startIndex)
+    public int RandomLength(string sequence, int startIndex)
     {
       return random.Next(1, sequence.Length - startIndex);
     }

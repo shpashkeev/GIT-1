@@ -6,8 +6,8 @@ namespace ReplacementOfCharacterGroups
   {
     static void Main(string[] args)
     {
-      string firstSequence = "abcdefghijklmnop";
-      string secondSequence = "1234567890";
+      string firstSequence = args[0];
+      string secondSequence = args[1];
 
       string thirdSequence = new Replacer().Replacement(firstSequence, secondSequence);
 

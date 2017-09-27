@@ -10,8 +10,8 @@ namespace ReplacementOfCharacterGroups
       int indexInFirstSequence = randomizer.RandomStartIndex(firstSequence);
       int indexInSecondSequence = randomizer.RandomStartIndex(secondSequence);
 
-      int groupLengthFromFirstSequnce = randomizer.RandomCount(firstSequence, indexInFirstSequence);
-      int groupLengthFromSecondSequnce = randomizer.RandomCount(secondSequence, indexInSecondSequence);
+      int groupLengthFromFirstSequnce = randomizer.RandomLength(firstSequence, indexInFirstSequence);
+      int groupLengthFromSecondSequnce = randomizer.RandomLength(secondSequence, indexInSecondSequence);
 
       string firstGroup = firstSequence.Substring(indexInFirstSequence, groupLengthFromFirstSequnce);
       string secondGroup = secondSequence.Substring(indexInSecondSequence, groupLengthFromSecondSequnce);
