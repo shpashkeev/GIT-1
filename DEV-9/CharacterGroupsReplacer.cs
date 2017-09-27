@@ -1,19 +1,20 @@
-﻿
+﻿using System;
+
 namespace ReplacementOfCharacterGroups
 {
-  public class Replacer
+  public class CharacterGroupsReplacer
   {
     public string Replacement(string firstSequence, string secondSequence)
     {
-      Randomizer randomizer = new Randomizer();
+      Random random = new Random();
 
       // Obtaining random start indices of groops in sequences
-      int indexInFirstSequence = randomizer.RandomStartIndex(firstSequence);
-      int indexInSecondSequence = randomizer.RandomStartIndex(secondSequence);
+      int indexInFirstSequence = random.Next(1, firstSequence.Length - 1);
+      int indexInSecondSequence = random.Next(1, secondSequence.Length - 1);
 
       // Obtaining random lengths of groups
-      int groupLengthFromFirstSequnce = randomizer.RandomLength(firstSequence, indexInFirstSequence);
-      int groupLengthFromSecondSequnce = randomizer.RandomLength(secondSequence, indexInSecondSequence);
+      int groupLengthFromFirstSequnce = random.Next(1, firstSequence.Length - indexInFirstSequence);
+      int groupLengthFromSecondSequnce = random.Next(1, secondSequence.Length - indexInSecondSequence);
 
       // Selecting a groups from sequences
       string firstGroup = firstSequence.Substring(indexInFirstSequence, groupLengthFromFirstSequnce);
