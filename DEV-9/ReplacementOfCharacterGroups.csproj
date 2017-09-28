@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterGroupsReplacer.cs" />
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="FileReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Replacer.cs" />
+    <Compile Include="TextFileReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
