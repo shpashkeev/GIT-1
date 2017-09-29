@@ -7,22 +7,25 @@ namespace ReplacementOfCharacterGroups
   // and calls a method to randomly replace groups of characters.
   public class EntryPoint
   {
+    private const string InvalidCount = "Invalid sequences count";
+    private const int ValidSequencesCount = 2;
+
     // Argument of method Main contains the path to the file.
     static void Main(string[] args)
     {
-      const int seqCount = 2;
+
       try
       {
         List<string> seqList = new TextFileReader().ReadLines(args[0]);
 
-        if (seqList.Count < seqCount)
+        if (seqList.Count != ValidSequencesCount)
         {
-          throw new ArgumentNullException();
+          throw new Exception(InvalidCount);
         }
         string firstSequence = seqList[0];
         string secondSequence = seqList[1];
 
-        string thirdSequence = new CharacterGroupsReplacer().Replacement(firstSequence, secondSequence);
+        string thirdSequence = new CharacterGroupsReplacer().Replace(firstSequence, secondSequence);
 
         Console.WriteLine($"#1: {firstSequence}");
         Console.WriteLine($"#2: {secondSequence}");

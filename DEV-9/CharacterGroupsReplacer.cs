@@ -7,7 +7,7 @@ namespace ReplacementOfCharacterGroups
   public class CharacterGroupsReplacer
   {
     // Character groups replacement in two input sequences
-    public string Replacement(string firstSequence, string secondSequence)
+    public string Replace(string firstSequence, string secondSequence)
     {
       Random random = new Random();
 
@@ -23,8 +23,7 @@ namespace ReplacementOfCharacterGroups
       string firstGroup = firstSequence.Substring(indexInFirstSequence, groupLengthFromFirstSequnce);
       string secondGroup = secondSequence.Substring(indexInSecondSequence, groupLengthFromSecondSequnce);
 
-      string result = firstSequence.Replace(firstGroup, secondGroup);
-      return result;
+      return firstSequence.Replace(firstGroup, secondGroup); 
     }
   }
 }
