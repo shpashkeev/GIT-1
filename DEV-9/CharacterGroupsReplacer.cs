@@ -2,8 +2,11 @@
 
 namespace ReplacementOfCharacterGroups
 {
+  // Class contains method,
+  // that deals with the replacement groups of characters in input sequences
   public class CharacterGroupsReplacer
   {
+    // Character groups replacement in two input sequences
     public string Replacement(string firstSequence, string secondSequence)
     {
       Random random = new Random();
