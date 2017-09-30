@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CollectOneArrayFromN
 {
+
   class EntryPoint
   {
+
     static void Main(string[] args)
     {
     }

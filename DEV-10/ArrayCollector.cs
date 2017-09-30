@@ -9,7 +9,7 @@ namespace CollectOneArrayFromN
 {
   public class ArrayCollector
   {
-    private const double Epsilon = 10E-6;
+    private const double Epsilon = 10E-3;
     private const int ValidElemRepeat = 2;
 
     public double[] CollectArrayDoubles(List<double[]> arrays)
