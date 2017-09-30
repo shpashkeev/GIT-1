@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CollectOneArrayFromN
 {
   public class ArrayCollector
   {
-    private const double Epsilon = 10E-3;
+    private const double Epsilon = 1E-3;
     private const int ValidElemRepeat = 2;
 
     public double[] CollectArrayDoubles(List<double[]> arrays)
