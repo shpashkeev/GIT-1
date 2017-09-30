@@ -16,16 +16,15 @@ namespace CollectOneArrayFromN
     {
       List<double> listDoubles = new List<double>();
       int arraysCount = arrays.Count;
-      int elemRepeat;
 
-      for (int i = 0; i < arraysCount; i++)
+      for (int i = 0; i < arraysCount - 1; i++)
       {
         double[] firstArray = arrays[i];
 
         foreach (var searchItem in firstArray)
         {
           // The number of arrays in which searchItem occurs
-          elemRepeat = 1;
+          int elemRepeat = 1;
 
           for (int j = i + 1; j < arraysCount; j++)
           {
@@ -37,6 +36,7 @@ namespace CollectOneArrayFromN
               if (Math.Abs(searchItem - comparedItem) <= Epsilon)
               {
                 elemRepeat++;
+                break;
               }
             }
           }
@@ -45,15 +45,9 @@ namespace CollectOneArrayFromN
             listDoubles.Add(searchItem);
           }
         }
+      }
 
-      }
-      int resultArrayLength = listDoubles.Count;
-      double[] result = new double[resultArrayLength];
-      for (int i = 0; i < resultArrayLength; i++)
-      {
-        result[i] = listDoubles[i];
-      }
-      return result;
+      return listDoubles.ToArray();
     }
   }
 }
