@@ -10,28 +10,42 @@ namespace CollectOneArrayFromN
   public class ArrayCollector
   {
     private const double Epsilon = 10E-6;
+    private const int ValidElemRepeat = 2;
+
     public double[] CollectArrayDoubles(List<double[]> arrays)
     {
       List<double> listDoubles = new List<double>();
       int arraysCount = arrays.Count;
+      int elemRepeat;
 
       for (int i = 0; i < arraysCount; i++)
       {
         double[] firstArray = arrays[i];
-        for (int j = i; j < arraysCount; j++)
+
+        foreach (var searchItem in firstArray)
         {
-          double[] secondArray = arrays[j];
-          foreach (var elem1 in firstArray)
+          // The number of arrays in which searchItem occurs
+          elemRepeat = 1;
+
+          for (int j = i + 1; j < arraysCount; j++)
           {
-            foreach (var elem2 in secondArray)
+            // Select the next array to find searchItem
+            double[] secondArray = arrays[j];
+
+            foreach (var comparedItem in secondArray)
             {
-              if (Math.Abs(elem1 - elem2) <= Epsilon && !listDoubles.Contains(elem1) && !listDoubles.Contains(elem2))
+              if (Math.Abs(searchItem - comparedItem) <= Epsilon)
               {
-                listDoubles.Add(elem1);
+                elemRepeat++;
               }
             }
           }
+          if (elemRepeat >= ValidElemRepeat && !listDoubles.Contains(searchItem))
+          {
+            listDoubles.Add(searchItem);
+          }
         }
+
       }
       int resultArrayLength = listDoubles.Count;
       double[] result = new double[resultArrayLength];
