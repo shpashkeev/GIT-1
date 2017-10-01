@@ -46,6 +46,7 @@
     <Compile Include="ArrayBuilder.cs" />
     <Compile Include="ArrayCollector.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="Inputer.cs" />
     <Compile Include="ListWithArraysBuilder.cs" />
     <Compile Include="ListWithArraysPrinter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

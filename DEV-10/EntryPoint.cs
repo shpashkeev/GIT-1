@@ -14,7 +14,7 @@ namespace CollectOneArrayFromN
       ListWithArraysBuilder arraysBuilder = new ListWithArraysBuilder();
       ListWithArraysPrinter arraysPrinter = new ListWithArraysPrinter();
 
-      int countN = 10;
+      int countN = new Inputer().ReturnInt();
       List<double[]> doubleArraysList = arraysBuilder.BuildDoubles(countN);
 
       double[] result = arrayCollector.CollectArrayDoubles(doubleArraysList);
