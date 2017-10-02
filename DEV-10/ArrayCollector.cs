@@ -3,10 +3,14 @@ using System.Collections.Generic;
 
 namespace CollectOneArrayFromN
 {
+  // Class contains method
+  // that collect from N input arrays one array
+  // which consists of elements that are contained in a certain number of inputs arrays
   public class ArrayCollector
   {
-    private const double Epsilon = 1E-3;
+    // Certain number of inputs arrays, in which the element should be contained
     private const int ValidElemRepeat = 2;
+    private const double Epsilon = 1E-3;
 
     public double[] CollectArrayDoubles(List<double[]> arrays)
     {
@@ -36,13 +40,13 @@ namespace CollectOneArrayFromN
               }
             }
           }
+          // Condition of occurrence elem in returned array
           if (elemRepeat >= ValidElemRepeat && !listDoubles.Contains(searchItem))
           {
             listDoubles.Add(searchItem);
           }
         }
       }
-
       return listDoubles.ToArray();
     }
   }

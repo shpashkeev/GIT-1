@@ -5,6 +5,8 @@ namespace CollectOneArrayFromN
 {
   public class ListWithArraysBuilder
   {
+    // Method build list with double arrays.
+    // Parameter count - amount of such arrays in returned list.
     public List<double[]> BuildDoubles(int count)
     {
       ArrayBuilder arrayBuilder = new ArrayBuilder();

@@ -3,29 +3,41 @@ using System.Collections.Generic;
 
 namespace CollectOneArrayFromN
 {
+  // Main method of this class takes N arrays of real numbers
+  // and collects one of these arrays, whose elements obey a certain rule.
+  // Result of this process displayed in certain string format.
   public class EntryPoint
   {
-    public static string StringFormat = "F3";
-    private static string ResultLine = "Result: ";
+    public const string StringFormat = "F3";
+    private const string ResultLine = "Result: ";
 
     static void Main(string[] args)
     {
-      ArrayCollector arrayCollector = new ArrayCollector();
-      ListWithArraysBuilder arraysBuilder = new ListWithArraysBuilder();
-      ListWithArraysPrinter arraysPrinter = new ListWithArraysPrinter();
-
-      int countN = new Inputer().ReturnInt();
-      List<double[]> doubleArraysList = arraysBuilder.BuildDoubles(countN);
-
-      double[] result = arrayCollector.CollectArrayDoubles(doubleArraysList);
-
-      arraysPrinter.PrintDoubles(doubleArraysList);
-      Console.Write(ResultLine);
-      foreach (var elem in result)
+      try
       {
-        Console.Write(elem.ToString(StringFormat) + " ");
+        // Init
+        ArrayCollector arrayCollector = new ArrayCollector();
+        ListWithArraysBuilder arraysBuilder = new ListWithArraysBuilder();
+        ListWithArraysPrinter arraysPrinter = new ListWithArraysPrinter();
+
+        // Process
+        int countN = new Inputer().ReturnPositiveInt();
+        List<double[]> doubleArraysList = arraysBuilder.BuildDoubles(countN);
+        double[] result = arrayCollector.CollectArrayDoubles(doubleArraysList);
+
+        // Result
+        arraysPrinter.PrintDoubles(doubleArraysList);
+        Console.Write(ResultLine);
+        foreach (var elem in result)
+        {
+          Console.Write(elem.ToString(StringFormat) + " ");
+        }
+        Console.ReadKey();
       }
-      Console.ReadKey();
+      catch (Exception exc)
+      {
+        Console.WriteLine(exc.Message);
+      }
     }
   }
 }

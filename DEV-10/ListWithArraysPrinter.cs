@@ -3,8 +3,13 @@ using System.Collections.Generic;
 
 namespace CollectOneArrayFromN
 {
+  // Class contains method
+  // that print input list with arrays
+  // in necessary string format
   public class ListWithArraysPrinter
   {
+    // Method print in console double arrays from list
+    // Format is defined in main class EntryPoint
     public void PrintDoubles(List<double[]> arrays)
     {
       int arraysCount = arrays.Count;
