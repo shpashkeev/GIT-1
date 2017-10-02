@@ -5,6 +5,9 @@ namespace CollectOneArrayFromN
 {
   public class ListWithArraysBuilder
   {
+    private const int MinArrayLength = 2;
+    private const int MaxArrayLength = 10;
+
     // Method build list with double arrays.
     // Parameter count - amount of such arrays in returned list.
     public List<double[]> BuildDoubles(int count)
@@ -15,7 +18,7 @@ namespace CollectOneArrayFromN
 
       for (int i = 0; i < count; i++)
       {
-        resultList.Add(arrayBuilder.BuildArrayDoubles(randGen.Next(2, 10)));
+        resultList.Add(arrayBuilder.BuildArrayDoubles(randGen.Next(MinArrayLength, MaxArrayLength)));
       }
       return resultList;
     }
