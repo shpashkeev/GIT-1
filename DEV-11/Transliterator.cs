@@ -1,28 +1,64 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Transliteration
 {
-  public class TransliterationDictionaries
+  public class Transliterator
   {
+    public string DirectTransliteration(string defaultText)
+    {
+      StringBuilder sb = new StringBuilder();
+
+      string[] words = SplitIntoTokens(defaultText);
+      foreach (var word in words)
+      {
+        string outputWord = word;
+        foreach (var value in CyrilLatinDictionary.Keys)
+        {
+          if (outputWord.Contains(value))
+          {
+            outputWord = outputWord.Replace(value, CyrilLatinDictionary[value]);
+          }
+        }
+        sb.Append(outputWord);
+        sb.Append(" ");
+      }
+      return sb.ToString();
+    }
+    public static string[] SplitIntoTokens(string s)
+    {
+      return s.Split(null as char[], StringSplitOptions.RemoveEmptyEntries);
+    }
     public static readonly Dictionary<string, string> CyrilLatinDictionary = new Dictionary<string, string>
     {
       {"еее", "eyeye"},
       {"ае", "aye"},
+      {"Ае", "Aye"},
       {"ее", "eye"},
+      {"Ее", "Eye"},
       {"ие", "iye"},
+      {"Ие", "Iye"},
       {"ое", "oye"},
+      {"Ое", "Oye"},
       {"уе", "uye"},
+      {"Уе", "Uye"},
       {"ъе", "ye"},
       {"ые", "yye"},
       {"ье", "ye"},
       {"эе", "eye"},
+      {"Эе", "Eye"},
       {"юе", "yuye"},
       {"яе", "yaye"},
+      {"Яе", "Yaye"},
       {"аё", "aye"},
       {"её", "eye"},
+      {"Её", "Eye"},
       {"иё", "iye"},
       {"оё", "oye"},
+      {"Оё", "Oye"},
       {"уё", "uye"},
+      {"Уё", "Uye"},
       {"ъё", "ye"},
       {"ыё", "yye"},
       {"ьё", "ye"},
@@ -102,23 +138,37 @@ namespace Transliteration
       {"shch", "щ"},
       {"Shch", "Щ"},
       {"yuye", "юе"},
+      {"Yuye", "Юе"},
       {"yaye", "яе"},
+      {"Yaye", "Яе"},
       {"aye", "ае"},
+      {"Aye", "Ае"},
       {"eye", "ее"},
+      {"Eye", "Ее"},
       {"iye", "ие"},
+      {"Iye", "Ие"},
       {"oye", "ое"},
+      {"Oye", "Ое"},
       {"uye", "уе"},
+      {"Uye", "Уе"},
       {"yye", "ые"},
       {"ye", "ье"},
       {"ia", "ья"},
       {"iy", "ий"},
       {"zh", "ж"},
+      {"Zh", "Ж"},
       {"kh", "х"},
+      {"Kh", "Х"},
       {"ts", "ц"},
+      {"Ts", "Ц"},
       {"ch", "ч"},
+      {"Ch", "Ч"},
       {"sh", "ш"},
+      {"Sh", "Ш"},
       {"yu", "ю"},
+      {"Yu", "Ю"},
       {"ya", "я"},
+      {"Ya", "Я"},
       {"a", "а"},
       {"b", "б"},
       {"v", "в"},
@@ -140,7 +190,26 @@ namespace Transliteration
       {"u", "у"},
       {"f", "ф"},
       {"y", "ы"},
-      {"e", "э"}
+      {"A", "А"},
+      {"B", "Б"},
+      {"V", "В"},
+      {"G", "Г"},
+      {"D", "Д"},
+      {"E", "Е"},
+      {"Z", "З"},
+      {"I", "И"},
+      {"Y", "Й"},
+      {"K", "К"},
+      {"L", "Л"},
+      {"M", "М"},
+      {"N", "Н"},
+      {"O", "О"},
+      {"P", "П"},
+      {"R", "Р"},
+      {"S", "С"},
+      {"T", "Т"},
+      {"U", "У"},
+      {"F", "Ф"}
     };
   }
 }

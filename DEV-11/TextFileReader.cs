@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 
-namespace ReplacementOfCharacterGroups
+namespace Transliteration
 {
   // Class contains a method
   // that reads lines from a text file.
