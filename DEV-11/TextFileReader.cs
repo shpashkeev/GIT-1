@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Text;
 
 namespace Transliteration
 {
@@ -10,9 +11,15 @@ namespace Transliteration
     // StreamReader class constructor initializes the encoding to UTF8Encoding.
     public string ReadLines(string path)
     {
-      using (StreamReader file = new StreamReader(path))
+      using (StreamReader file = new StreamReader(path, System.Text.Encoding.Default))
       {
-        return file.ReadToEnd();
+        string line;
+        StringBuilder result = new StringBuilder();
+        while ((line = file.ReadLine()) != null)
+        {
+          result.Append(line);
+        }
+        return result.ToString();
       }
     }
   }

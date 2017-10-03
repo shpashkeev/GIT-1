@@ -26,11 +26,33 @@ namespace Transliteration
       }
       return sb.ToString();
     }
+
+    public string ReverseTransliteration(string transliteratedText)
+    {
+      StringBuilder sb = new StringBuilder();
+
+      string[] words = SplitIntoTokens(transliteratedText);
+      foreach (var word in words)
+      {
+        string outputWord = word;
+        foreach (var value in LatinCyrilDictionary.Keys)
+        {
+          if (outputWord.Contains(value))
+          {
+            outputWord = outputWord.Replace(value, LatinCyrilDictionary[value]);
+          }
+        }
+        sb.Append(outputWord);
+        sb.Append(" ");
+      }
+      return sb.ToString();
+    }
+
     public static string[] SplitIntoTokens(string s)
     {
       return s.Split(null as char[], StringSplitOptions.RemoveEmptyEntries);
     }
-    public static readonly Dictionary<string, string> CyrilLatinDictionary = new Dictionary<string, string>
+    public readonly Dictionary<string, string> CyrilLatinDictionary = new Dictionary<string, string>
     {
       {"еее", "eyeye"},
       {"ае", "aye"},
@@ -95,7 +117,9 @@ namespace Transliteration
       {"ч", "ch"},
       {"ш", "sh"},
       {"щ", "shch"},
+      {"ъ", ""},
       {"ы", "y"},
+      {"ь", ""},
       {"э", "e"},
       {"ю", "yu"},
       {"я", "ya"},
@@ -132,7 +156,7 @@ namespace Transliteration
       {"Я", "Ya"}
     };
 
-    public static readonly Dictionary<string, string> LatinCyrilDictionary = new Dictionary<string, string>
+    public readonly Dictionary<string, string> LatinCyrilDictionary = new Dictionary<string, string>
     {
       {"eyeye", "еее"},
       {"shch", "щ"},
@@ -189,7 +213,6 @@ namespace Transliteration
       {"t", "т"},
       {"u", "у"},
       {"f", "ф"},
-      {"y", "ы"},
       {"A", "А"},
       {"B", "Б"},
       {"V", "В"},
