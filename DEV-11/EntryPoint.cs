@@ -17,10 +17,9 @@ namespace Transliteration
       try
       {
         Transliterator translit = new Transliterator();
+
         string inputText = new TextFileReader().ReadText(args[0]);
-
         string inLatinText = translit.FromCyrillicToLatin(inputText);
-
         string inCyrilText = translit.FromLatinToCyrillic(inLatinText);
 
         Console.WriteLine(DefaultText);
@@ -37,7 +36,6 @@ namespace Transliteration
       catch (Exception exc)
       {
         Console.WriteLine(exc.Message);
-        Console.ReadKey();
       }
     }
   }

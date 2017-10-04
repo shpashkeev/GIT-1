@@ -8,7 +8,7 @@ namespace Transliteration
   // that performs the process of transliteration
   // from Cyrillic to Latin and back.
   // According to the rules of transliteration,
-  // the dictionaries contained in this class are compiled
+  // class dictionaries are compiled
   public class Transliterator
   {
     // Process of transliteration from Cyrillic to Latin
