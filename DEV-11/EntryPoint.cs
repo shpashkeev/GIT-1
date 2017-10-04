@@ -2,8 +2,8 @@
 
 namespace Transliteration
 {
-  // Main class method passes the text to the instance of the class Transliterator
-  // that calls methods of transliteration of the input text from Cyrillic to Latin and vice versa
+  // Main class method passes the text to the instance of the class Transliterator,
+  // that calls methods of transliteration of the input text from Cyrillic to Latin and vice versa,
   // and outputs results.
   public class EntryPoint
   {
