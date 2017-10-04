@@ -4,8 +4,14 @@ using System.Text;
 
 namespace Transliteration
 {
+  // Class contains methods
+  // that performs the process of transliteration
+  // from Cyrillic to Latin and back.
+  // According to the rules of transliteration,
+  // the dictionaries contained in this class are compiled
   public class Transliterator
   {
+    // Process of transliteration from Cyrillic to Latin
     public string DirectTransliteration(string defaultText)
     {
       StringBuilder sb = new StringBuilder();
@@ -14,11 +20,11 @@ namespace Transliteration
       foreach (var word in words)
       {
         string outputWord = word;
-        foreach (var value in CyrilLatinDictionary.Keys)
+        foreach (var value in CyrillicLatinDictionary.Keys)
         {
           if (outputWord.Contains(value))
           {
-            outputWord = outputWord.Replace(value, CyrilLatinDictionary[value]);
+            outputWord = outputWord.Replace(value, CyrillicLatinDictionary[value]);
           }
         }
         sb.Append(outputWord);
@@ -27,6 +33,7 @@ namespace Transliteration
       return sb.ToString();
     }
 
+    // Process of transliteration from Latin to Cyrillic
     public string ReverseTransliteration(string transliteratedText)
     {
       StringBuilder sb = new StringBuilder();
@@ -35,11 +42,11 @@ namespace Transliteration
       foreach (var word in words)
       {
         string outputWord = word;
-        foreach (var value in LatinCyrilDictionary.Keys)
+        foreach (var value in LatinCyrillicDictionary.Keys)
         {
           if (outputWord.Contains(value))
           {
-            outputWord = outputWord.Replace(value, LatinCyrilDictionary[value]);
+            outputWord = outputWord.Replace(value, LatinCyrillicDictionary[value]);
           }
         }
         sb.Append(outputWord);
@@ -48,12 +55,14 @@ namespace Transliteration
       return sb.ToString();
     }
 
+    // Subsidiary method that converts text into a sequence of words
     public string[] SplitIntoTokens(string s)
     {
       return s.Split(null as char[], StringSplitOptions.RemoveEmptyEntries);
     }
 
-    public readonly Dictionary<string, string> CyrilLatinDictionary = new Dictionary<string, string>
+    // Transliteration rules from the resource https://www.nic.ru/dns/translit.shtml
+    public readonly Dictionary<string, string> CyrillicLatinDictionary = new Dictionary<string, string>
     {
       {"еее", "eyeye"},
       {"ае", "aye"},
@@ -157,7 +166,7 @@ namespace Transliteration
       {"Я", "Ya"}
     };
 
-    public readonly Dictionary<string, string> LatinCyrilDictionary = new Dictionary<string, string>
+    public readonly Dictionary<string, string> LatinCyrillicDictionary = new Dictionary<string, string>
     {
       {"eyeye", "еее"},
       {"shch", "щ"},
