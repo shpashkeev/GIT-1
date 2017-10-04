@@ -18,7 +18,7 @@ namespace Transliteration
       {
         Transliterator translit = new Transliterator();
 
-        string inputText = new TextFileReader().ReadText(args[0]);
+        string inputText = new TextDataReader().ReadFromTextFile(args[0]);
         string inLatinText = translit.FromCyrillicToLatin(inputText);
         string inCyrilText = translit.FromLatinToCyrillic(inLatinText);
 
