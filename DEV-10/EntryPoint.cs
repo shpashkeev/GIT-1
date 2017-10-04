@@ -17,11 +17,11 @@ namespace CollectOneArrayFromN
       {
         // Init
         ArrayCollector arrayCollector = new ArrayCollector();
-        ListWithArraysBuilder arraysBuilder = new ListWithArraysBuilder();
-        ListWithArraysPrinter arraysPrinter = new ListWithArraysPrinter();
+        ListArraysBuilder arraysBuilder = new ListArraysBuilder();
+        ListArraysPrinter arraysPrinter = new ListArraysPrinter();
 
         // Process
-        int countN = new Inputer().ReturnPositiveInt();
+        int countN = new IntegerInputer().ReturnPositiveInt();
         List<double[]> doubleArraysList = arraysBuilder.BuildDoubles(countN);
         double[] result = arrayCollector.CollectArrayDoubles(doubleArraysList);
 

@@ -46,9 +46,9 @@
     <Compile Include="ArrayBuilder.cs" />
     <Compile Include="ArrayCollector.cs" />
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="Inputer.cs" />
-    <Compile Include="ListWithArraysBuilder.cs" />
-    <Compile Include="ListWithArraysPrinter.cs" />
+    <Compile Include="IntegerInputer.cs" />
+    <Compile Include="ListArraysBuilder.cs" />
+    <Compile Include="ListArraysPrinter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
