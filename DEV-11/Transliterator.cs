@@ -12,11 +12,11 @@ namespace Transliteration
   public class Transliterator
   {
     // Process of transliteration from Cyrillic to Latin
-    public string DirectTransliteration(string defaultText)
+    public string FromCyrillicToLatin(string text)
     {
       StringBuilder sb = new StringBuilder();
 
-      string[] words = SplitIntoTokens(defaultText);
+      string[] words = SplitIntoTokens(text);
       foreach (var word in words)
       {
         string outputWord = word;
@@ -34,11 +34,11 @@ namespace Transliteration
     }
 
     // Process of transliteration from Latin to Cyrillic
-    public string ReverseTransliteration(string transliteratedText)
+    public string FromLatinToCyrillic(string text)
     {
       StringBuilder sb = new StringBuilder();
 
-      string[] words = SplitIntoTokens(transliteratedText);
+      string[] words = SplitIntoTokens(text);
       foreach (var word in words)
       {
         string outputWord = word;

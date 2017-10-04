@@ -8,16 +8,16 @@ namespace Transliteration
     private const string AfterTransliteration = "\nAfter transliteration.";
     private const string ReverseTransliteration = "\nReverse transliteration.";
 
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
       try
       {
         Transliterator translit = new Transliterator();
         string inputText = new TextFileReader().ReadLines(args[0]);
 
-        string inLatinText = translit.DirectTransliteration(inputText);
+        string inLatinText = translit.FromCyrillicToLatin(inputText);
 
-        string inCyrilText = translit.ReverseTransliteration(inLatinText);
+        string inCyrilText = translit.FromLatinToCyrillic(inLatinText);
 
         Console.WriteLine(DefaultText);
         Console.WriteLine(inputText);
