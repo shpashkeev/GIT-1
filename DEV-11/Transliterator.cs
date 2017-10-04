@@ -48,10 +48,11 @@ namespace Transliteration
       return sb.ToString();
     }
 
-    public static string[] SplitIntoTokens(string s)
+    public string[] SplitIntoTokens(string s)
     {
       return s.Split(null as char[], StringSplitOptions.RemoveEmptyEntries);
     }
+
     public readonly Dictionary<string, string> CyrilLatinDictionary = new Dictionary<string, string>
     {
       {"еее", "eyeye"},

@@ -8,18 +8,12 @@ namespace Transliteration
   public class TextFileReader
   {
     // The complete file path is specified by the path parameter.
-    // StreamReader class constructor initializes the encoding to UTF8Encoding.
+    // StreamReader class constructor initializes the ANSI encoding .
     public string ReadLines(string path)
     {
-      using (StreamReader file = new StreamReader(path, System.Text.Encoding.Default))
+      using (StreamReader file = new StreamReader(path, Encoding.Default))
       {
-        string line;
-        StringBuilder result = new StringBuilder();
-        while ((line = file.ReadLine()) != null)
-        {
-          result.Append(line);
-        }
-        return result.ToString();
+        return file.ReadToEnd();
       }
     }
   }
