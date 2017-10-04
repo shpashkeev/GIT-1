@@ -63,7 +63,16 @@ namespace Transliteration
 
     // Transliteration rules from the resource https://www.nic.ru/dns/translit.shtml
     public readonly Dictionary<string, string> CyrillicLatinDictionary = new Dictionary<string, string>
-    {
+    { {"ОАО", "OJSC"},
+      {"ЗАО", "CJSC"},
+      {"ООО", "LLC"},
+      {"фонд", "fond"},
+      {"Фонд", "Fond"},
+      {"ГОУ", "SEE"},
+      {"МОУ", "MEE"},
+      {"НОУ", "NEE"},
+      {"союз", "union"},
+      {"Союз", "Union"},
       {"еее", "eyeye"},
       {"ае", "aye"},
       {"Ае", "Aye"},
@@ -168,6 +177,18 @@ namespace Transliteration
 
     public readonly Dictionary<string, string> LatinCyrillicDictionary = new Dictionary<string, string>
     {
+      {"OJSC", "ОАО"},
+      {"CJSC", "ЗАО"},
+      {"LLC", "ООО"},
+      {"Ltd.", "ООО"},
+      {"SRL", "ООО"},
+      {"fond", "фонд"},
+      {"Fond", "Фонд"},
+      {"SEE", "ГОУ"},
+      {"MEE", "МОУ"},
+      {"NEE", "НОУ"},
+      {"union", "союз"},
+      {"Union", "Союз"},
       {"eyeye", "еее"},
       {"shch", "щ"},
       {"Shch", "Щ"},

@@ -2,18 +2,22 @@
 
 namespace Transliteration
 {
+  // Main class method passes the text to the instance of the class Transliterator
+  // that calls methods of transliteration of the input text from Cyrillic to Latin and vice versa
+  // and outputs results.
   public class EntryPoint
   {
     private const string DefaultText = "\nDefautl text.";
     private const string AfterTransliteration = "\nAfter transliteration.";
     private const string ReverseTransliteration = "\nReverse transliteration.";
 
+    // Parameter args - path to the file
     public static void Main(string[] args)
     {
       try
       {
         Transliterator translit = new Transliterator();
-        string inputText = new TextFileReader().ReadLines(args[0]);
+        string inputText = new TextFileReader().ReadText(args[0]);
 
         string inLatinText = translit.FromCyrillicToLatin(inputText);
 
