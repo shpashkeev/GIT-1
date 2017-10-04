@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace CollectOneArrayFromN
 {
-  public class ListWithArraysBuilder
+  public class ListArraysBuilder
   {
     private const int MinArrayLength = 2;
     private const int MaxArrayLength = 10;
 
-    // Method build list with double arrays.
+    // Method builds list with double arrays.
     // Parameter count - amount of such arrays in returned list.
     public List<double[]> BuildDoubles(int count)
     {

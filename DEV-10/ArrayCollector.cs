@@ -15,18 +15,21 @@ namespace CollectOneArrayFromN
     public double[] CollectArrayDoubles(List<double[]> arrays)
     {
       List<double> listDoubles = new List<double>();
-      int arraysCount = arrays.Count;
 
-      for (int i = 0; i < arraysCount - 1; i++)
+      for (int i = 0; i < arrays.Count - 1; i++)
       {
         double[] firstArray = arrays[i];
 
         foreach (var searchItem in firstArray)
         {
+          if (listDoubles.Contains(searchItem))
+          {
+            continue;
+          }
           // The number of arrays in which searchItem occurs
-          int elemRepeat = 1;
+          int elemOccurrences = 1;
 
-          for (int j = i + 1; j < arraysCount; j++)
+          for (int j = i + 1; j < arrays.Count; j++)
           {
             // Select the next array to find searchItem
             double[] secondArray = arrays[j];
@@ -35,13 +38,13 @@ namespace CollectOneArrayFromN
             {
               if (Math.Abs(searchItem - comparedItem) <= Epsilon)
               {
-                elemRepeat++;
+                elemOccurrences++;
                 break;
               }
             }
           }
           // Condition of occurrence elem in returned array
-          if (elemRepeat >= ValidElemRepeat && !listDoubles.Contains(searchItem))
+          if (elemOccurrences >= ValidElemRepeat)
           {
             listDoubles.Add(searchItem);
           }

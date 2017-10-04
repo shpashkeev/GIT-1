@@ -19,12 +19,12 @@ namespace CollectOneArrayFromN
       {
         throw new ArgumentException();
       }
-      double[] result = new double[size];
-      for (int i = 0; i < size; i++)
+      double[] resultArray = new double[size];
+      for (int i = 0; i < resultArray.Length; i++)
       {
-        result[i] = RandGen.NextDouble();
+        resultArray[i] = RandGen.NextDouble();
       }
-      return result;
+      return resultArray;
     }
   }
 }

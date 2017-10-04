@@ -3,13 +3,13 @@
 namespace CollectOneArrayFromN
 {
   // Class contains method
-  // that returns valid numbers entered by user
-  public class Inputer
+  // that returns valid integer numbers entered by user
+  public class IntegerInputer
   {
     private const string BadValue = "Bad value. Try again.";
     private const string IntValue = "Please, enter N - count of arrays: ";
 
-    // Method returns positive integer number entered by user from console
+    // Method returns valid positive integer number entered by user from console
     public int ReturnPositiveInt()
     {
       int result;
