@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 
 namespace Transliteration
 {
@@ -16,11 +18,16 @@ namespace Transliteration
     {
       try
       {
-        Transliterator translit = new Transliterator();
+        string inputText;
+        Transliterator transliterator = new Transliterator();
 
-        string inputText = new TextDataReader().ReadFromTextFile(args[0]);
-        string inLatinText = translit.FromCyrillicToLatin(inputText);
-        string inCyrilText = translit.FromLatinToCyrillic(inLatinText);
+        using (StreamReader file = new StreamReader(args[0], Encoding.Default))
+        {
+          inputText = file.ReadToEnd();
+        }
+
+        string inLatinText = transliterator.Translit(inputText, Alphabet.Cyrillic);
+        string inCyrilText = transliterator.Translit(inLatinText, Alphabet.Latin);
 
         Console.WriteLine(DefaultText);
         Console.WriteLine(inputText);

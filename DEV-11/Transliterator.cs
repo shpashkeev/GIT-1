@@ -1,9 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Transliteration
 {
+  public enum Alphabet
+  {
+    Cyrillic,
+    Latin
+  }
   // Class contains methods
   // that performs the process of transliteration
   // from Cyrillic to Latin and back.
@@ -11,68 +14,32 @@ namespace Transliteration
   // class dictionaries are compiled
   public class Transliterator
   {
-    // Process of transliteration from Cyrillic to Latin
-    public string FromCyrillicToLatin(string text)
+    // Process of transliteration
+    public string Translit(string text, Alphabet abc)
     {
-      StringBuilder sb = new StringBuilder();
-
-      string[] words = SplitIntoTokens(text);
-      foreach (var word in words)
+      string outputText = text;
+      switch (abc)
       {
-        string outputWord = word;
-        foreach (var value in CyrillicLatinDictionary.Keys)
-        {
-          if (outputWord.Contains(value))
+        case Alphabet.Cyrillic:
+          foreach (var value in CyrillicLatinDictionary.Keys)
           {
-            outputWord = outputWord.Replace(value, CyrillicLatinDictionary[value]);
+            outputText = outputText.Replace(value, CyrillicLatinDictionary[value]);
           }
-        }
-        sb.Append(outputWord);
-        sb.Append(" ");
-      }
-      return sb.ToString();
-    }
-
-    // Process of transliteration from Latin to Cyrillic
-    public string FromLatinToCyrillic(string text)
-    {
-      StringBuilder sb = new StringBuilder();
-
-      string[] words = SplitIntoTokens(text);
-      foreach (var word in words)
-      {
-        string outputWord = word;
-        foreach (var value in LatinCyrillicDictionary.Keys)
-        {
-          if (outputWord.Contains(value))
+          break;
+        case Alphabet.Latin:
+          foreach (var value in LatinCyrillicDictionary.Keys)
           {
-            outputWord = outputWord.Replace(value, LatinCyrillicDictionary[value]);
+            outputText = outputText.Replace(value, LatinCyrillicDictionary[value]);
           }
-        }
-        sb.Append(outputWord);
-        sb.Append(" ");
+          break;
       }
-      return sb.ToString();
-    }
 
-    // Subsidiary method that converts text into a sequence of words
-    public string[] SplitIntoTokens(string s)
-    {
-      return s.Split(null as char[], StringSplitOptions.RemoveEmptyEntries);
+      return outputText;
     }
 
     // Transliteration rules from the resource https://www.nic.ru/dns/translit.shtml
     public readonly Dictionary<string, string> CyrillicLatinDictionary = new Dictionary<string, string>
-    { {"ОАО", "OJSC"},
-      {"ЗАО", "CJSC"},
-      {"ООО", "LLC"},
-      {"фонд", "fond"},
-      {"Фонд", "Fond"},
-      {"ГОУ", "SEE"},
-      {"МОУ", "MEE"},
-      {"НОУ", "NEE"},
-      {"союз", "union"},
-      {"Союз", "Union"},
+    {
       {"еее", "eyeye"},
       {"ае", "aye"},
       {"Ае", "Aye"},
@@ -92,6 +59,8 @@ namespace Transliteration
       {"юе", "yuye"},
       {"яе", "yaye"},
       {"Яе", "Yaye"},
+      {" е", " ye"},
+      {" ё", " ye"},
       {"аё", "aye"},
       {"её", "eye"},
       {"Её", "Eye"},
@@ -177,18 +146,6 @@ namespace Transliteration
 
     public readonly Dictionary<string, string> LatinCyrillicDictionary = new Dictionary<string, string>
     {
-      {"OJSC", "ОАО"},
-      {"CJSC", "ЗАО"},
-      {"LLC", "ООО"},
-      {"Ltd.", "ООО"},
-      {"SRL", "ООО"},
-      {"fond", "фонд"},
-      {"Fond", "Фонд"},
-      {"SEE", "ГОУ"},
-      {"MEE", "МОУ"},
-      {"NEE", "НОУ"},
-      {"union", "союз"},
-      {"Union", "Союз"},
       {"eyeye", "еее"},
       {"shch", "щ"},
       {"Shch", "Щ"},
