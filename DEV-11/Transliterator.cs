@@ -7,9 +7,9 @@ namespace Transliteration
     Cyrillic,
     Latin
   }
-  // Class contains methods
+  // Class contains method
   // that performs the process of transliteration
-  // from Cyrillic to Latin and back.
+  // from Cyrillic to Latin or from Latin to Cyrillic.
   // According to the rules of transliteration,
   // class dictionaries are compiled
   public class Transliterator
@@ -164,7 +164,7 @@ namespace Transliteration
       {"uye", "уе"},
       {"Uye", "Уе"},
       {"yye", "ые"},
-      {"ye", "ье"},
+      {"ye", " е"},
       {"ia", "ья"},
       {"iy", "ий"},
       {"zh", "ж"},
