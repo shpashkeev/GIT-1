@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -13,21 +14,25 @@ namespace Transliteration
     private const string AfterTransliteration = "\nAfter transliteration.";
     private const string ReverseTransliteration = "\nReverse transliteration.";
 
-    // Parameter args - path to the file
+    // Parameter args - pathes to the files, that includes dictionaries and file with text
     public static void Main(string[] args)
     {
       try
       {
         string inputText;
+        DictionaryBuilder dictionaryBuilder = new DictionaryBuilder();
         Transliterator transliterator = new Transliterator();
 
-        using (StreamReader file = new StreamReader(args[0], Encoding.Default))
+        Dictionary<string, string> cyrillicLatinDictionary = dictionaryBuilder.BuildFromFile(args[0]);
+        Dictionary<string, string> latinCyrillicDictionary = dictionaryBuilder.BuildFromFile(args[1]);
+
+        using (StreamReader file = new StreamReader(args[2], Encoding.Default))
         {
           inputText = file.ReadToEnd();
         }
 
-        string inLatinText = transliterator.Translit(inputText, Alphabet.Cyrillic);
-        string inCyrilText = transliterator.Translit(inLatinText, Alphabet.Latin);
+        string inLatinText = transliterator.Translit(inputText, cyrillicLatinDictionary);
+        string inCyrilText = transliterator.Translit(inLatinText, latinCyrillicDictionary);
 
         Console.WriteLine(DefaultText);
         Console.WriteLine(inputText);
@@ -43,6 +48,7 @@ namespace Transliteration
       catch (Exception exc)
       {
         Console.WriteLine(exc.Message);
+        Console.ReadKey();
       }
     }
   }
