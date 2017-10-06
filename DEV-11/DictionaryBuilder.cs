@@ -6,6 +6,8 @@ using System.Text;
 
 namespace Transliteration
 {
+  // Class conntains method
+  // that builds abc dictionary from file
   public class DictionaryBuilder
   {
     public Dictionary<string, string> BuildFromFile(string filePath)
