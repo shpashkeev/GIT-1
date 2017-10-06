@@ -14,26 +14,29 @@ namespace Transliteration
     private const string AfterTransliteration = "\nAfter transliteration.";
     private const string ReverseTransliteration = "\nReverse transliteration.";
 
-    // Parameter args - pathes to the files, that includes dictionaries and file with text
+    // Parameter args - pathes to the files, that includes dictionaries and input text
     public static void Main(string[] args)
     {
       try
       {
+        // declaration
         string inputText;
         DictionaryBuilder dictionaryBuilder = new DictionaryBuilder();
         Transliterator transliterator = new Transliterator();
 
+        // initializing dictionaries
         Dictionary<string, string> cyrillicLatinDictionary = dictionaryBuilder.BuildFromFile(args[0]);
         Dictionary<string, string> latinCyrillicDictionary = dictionaryBuilder.BuildFromFile(args[1]);
 
+        // transliteration process
         using (StreamReader file = new StreamReader(args[2], Encoding.Default))
         {
           inputText = file.ReadToEnd();
         }
-
         string inLatinText = transliterator.Translit(inputText, cyrillicLatinDictionary);
         string inCyrilText = transliterator.Translit(inLatinText, latinCyrillicDictionary);
 
+        // results
         Console.WriteLine(DefaultText);
         Console.WriteLine(inputText);
 
