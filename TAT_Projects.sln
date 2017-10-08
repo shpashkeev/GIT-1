@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsStorage.Tests", "DE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transliteration", "DEV-11\Transliteration.csproj", "{36151B09-93BA-4D4F-A51E-372BDC9B9DA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectOneArrayFromN", "DEV-10\CollectOneArrayFromN.csproj", "{859644A8-9BB1-4E9C-B55A-0CAF2F4B5D77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,10 +55,21 @@ Global
 		{83993B81-44A3-4F8C-ACA2-69C06956ADCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83993B81-44A3-4F8C-ACA2-69C06956ADCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83993B81-44A3-4F8C-ACA2-69C06956ADCC}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{36151B09-93BA-4D4F-A51E-372BDC9B9DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{36151B09-93BA-4D4F-A51E-372BDC9B9DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36151B09-93BA-4D4F-A51E-372BDC9B9DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36151B09-93BA-4D4F-A51E-372BDC9B9DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+<<<<<<< HEAD
+		{859644A8-9BB1-4E9C-B55A-0CAF2F4B5D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859644A8-9BB1-4E9C-B55A-0CAF2F4B5D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859644A8-9BB1-4E9C-B55A-0CAF2F4B5D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859644A8-9BB1-4E9C-B55A-0CAF2F4B5D77}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
