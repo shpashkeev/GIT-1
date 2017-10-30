@@ -1,9 +1,9 @@
 ﻿
 namespace TypeOfTriangle
 {
-  class EquilateralorTriangleBuilder : TriangleBuilder
+  class EquilateralTriangleBuilder : TriangleBuilder
   {
-    public EquilateralorTriangleBuilder(TriangleBuilder successor)
+    public EquilateralTriangleBuilder(TriangleBuilder successor)
     {
       this.successor = successor;
     }
@@ -12,7 +12,7 @@ namespace TypeOfTriangle
     {
       try
       {
-        return new EquilateralorTriangle(sides);
+        return new EquilateralTriangle(sides);
       }
       catch (TriangleTypeException)
       {

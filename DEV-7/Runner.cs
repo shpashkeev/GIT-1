@@ -5,7 +5,7 @@ namespace TypeOfTriangle
   // Enumeration with types of triangles
   enum TypeOfTriangles
   {
-    Equilateralor,
+    Equilateral,
     Isosceles,
     Usual
   }
@@ -24,7 +24,7 @@ namespace TypeOfTriangle
           Triangle verifiableTriangle;
 
           // The order of builders is important
-          TriangleBuilder builder = new EquilateralorTriangleBuilder(
+          TriangleBuilder builder = new EquilateralTriangleBuilder(
                                                   new IsoscelesTriangleBuilder(
                                                     new UsualTriangleBuilder(null)));
           verifiableTriangle = builder.Build(sides);

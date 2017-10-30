@@ -2,9 +2,9 @@
 
 namespace TypeOfTriangle
 {
-  class EquilateralorTriangle : Triangle
+  class EquilateralTriangle : Triangle
   {
-    public EquilateralorTriangle(double[] sides) : base(sides)
+    public EquilateralTriangle(double[] sides) : base(sides)
     {
       // Condition for an equilateralor triangle
       if (!(Math.Abs(SideA - SideB) < EPSILON && Math.Abs(SideB - SideC) < EPSILON))
@@ -15,7 +15,7 @@ namespace TypeOfTriangle
 
     public override TypeOfTriangles Type()
     {
-      return TypeOfTriangles.Equilateralor;
+      return TypeOfTriangles.Equilateral;
     }
 
     public override string TypeString()
