@@ -4,18 +4,18 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TypeOfTriangle.Tests
 {
   [TestClass]
-  public class EquilateralTriangleTests
+  public class UsualTriangleTests
   {
     public TestContext TestContext { get; set; }
-
-    private const string connectionStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\DataSources\\DataForEquilateralTriangle.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES\";";
     private const string SideA = "SideA";
     private const string SideB = "SideB";
     private const string SideC = "SideC";
 
+    private const string connectionStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\DataSources\\DataForUsualTriangle.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES\";";
+
     [TestMethod]
     [DataSource(connectionStr, "Valid$")]
-    public void Create_EquilateralTriangleForValidData_IsEquilateralTriangle()
+    public void Create_UsualTriangleForValidData_IsUsualTriangle()
     {
       // arrange
       double sideA = Convert.ToDouble(TestContext.DataRow[SideA]);
@@ -25,16 +25,16 @@ namespace TypeOfTriangle.Tests
       double[] sides = { sideA, sideB, sideC };
 
       // act
-      var res = new EquilateralTriangle(sides);
+      var res = new UsualTriangle(sides);
 
       // assert
-      Assert.IsInstanceOfType(res, typeof(EquilateralTriangle));
+      Assert.IsInstanceOfType(res, typeof(UsualTriangle));
     }
 
     [TestMethod]
     [DataSource(connectionStr, "Invalid$")]
     [ExpectedException(typeof(TriangleBuildException))]
-    public void Create_EquilateralTriangleForInvalidData_TriangleBuildException()
+    public void Create_IsoscelesTriangleForInvalidData_TriangleBuildException()
     {
       // arrange
       double sideA = Convert.ToDouble(TestContext.DataRow[SideA]);
@@ -44,7 +44,7 @@ namespace TypeOfTriangle.Tests
       double[] sides = { sideA, sideB, sideC };
 
       // act
-      var res = new EquilateralTriangle(sides);
+      var res = new UsualTriangle(sides);
 
       // assert
     }
@@ -52,7 +52,7 @@ namespace TypeOfTriangle.Tests
     [TestMethod]
     [DataSource(connectionStr, "WrongFormat$")]
     [ExpectedException(typeof(FormatException))]
-    public void Create_EquilateralTriangleForInvalidData_FormatException()
+    public void Create_IsoscelesTriangleForInvalidData_FormatException()
     {
       // arrange
       double sideA = Convert.ToDouble(TestContext.DataRow[SideA]);
@@ -62,7 +62,7 @@ namespace TypeOfTriangle.Tests
       double[] sides = { sideA, sideB, sideC };
 
       // act
-      var res = new EquilateralTriangle(sides);
+      var res = new UsualTriangle(sides);
 
       // assert
     }
@@ -70,7 +70,7 @@ namespace TypeOfTriangle.Tests
     [TestMethod]
     [DataSource(connectionStr, "WrongType$")]
     [ExpectedException(typeof(TriangleTypeException))]
-    public void Create_EquilateralTriangleForInvalidData_TriangleTypeException()
+    public void Create_IsoscelesTriangleForInvalidData_TriangleTypeException()
     {
       // arrange
       double sideA = Convert.ToDouble(TestContext.DataRow[SideA]);
@@ -80,7 +80,7 @@ namespace TypeOfTriangle.Tests
       double[] sides = { sideA, sideB, sideC };
 
       // act
-      var res = new EquilateralTriangle(sides);
+      var res = new UsualTriangle(sides);
 
       // assert
     }
