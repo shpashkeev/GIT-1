@@ -18,11 +18,7 @@ namespace TypeOfTriangle.Tests
     public void Create_IsoscelesTriangleForValidData_IsIsoscelesTriangle()
     {
       // arrange
-      double sideA = Convert.ToDouble(TestContext.DataRow[SideA]);
-      double sideB = Convert.ToDouble(TestContext.DataRow[SideB]);
-      double sideC = Convert.ToDouble(TestContext.DataRow[SideC]);
-
-      double[] sides = { sideA, sideB, sideC };
+      var sides = ReadTriangleSidesFromTestContext();
 
       // act
       var res = new IsoscelesTriangle(sides);
@@ -31,17 +27,14 @@ namespace TypeOfTriangle.Tests
       Assert.IsInstanceOfType(res, typeof(IsoscelesTriangle));
     }
 
+
     [TestMethod]
     [DataSource(connectionStr, "Invalid$")]
     [ExpectedException(typeof(TriangleBuildException))]
     public void Create_IsoscelesTriangleForInvalidData_TriangleBuildException()
     {
       // arrange
-      double sideA = Convert.ToDouble(TestContext.DataRow[SideA]);
-      double sideB = Convert.ToDouble(TestContext.DataRow[SideB]);
-      double sideC = Convert.ToDouble(TestContext.DataRow[SideC]);
-
-      double[] sides = { sideA, sideB, sideC };
+      var sides = ReadTriangleSidesFromTestContext();
 
       // act
       var res = new IsoscelesTriangle(sides);
@@ -55,11 +48,7 @@ namespace TypeOfTriangle.Tests
     public void Create_IsoscelesTriangleForInvalidData_FormatException()
     {
       // arrange
-      double sideA = Convert.ToDouble(TestContext.DataRow[SideA]);
-      double sideB = Convert.ToDouble(TestContext.DataRow[SideB]);
-      double sideC = Convert.ToDouble(TestContext.DataRow[SideC]);
-
-      double[] sides = { sideA, sideB, sideC };
+      var sides = ReadTriangleSidesFromTestContext();
 
       // act
       var res = new IsoscelesTriangle(sides);
@@ -73,16 +62,22 @@ namespace TypeOfTriangle.Tests
     public void Create_IsoscelesTriangleForInvalidData_TriangleTypeException()
     {
       // arrange
-      double sideA = Convert.ToDouble(TestContext.DataRow[SideA]);
-      double sideB = Convert.ToDouble(TestContext.DataRow[SideB]);
-      double sideC = Convert.ToDouble(TestContext.DataRow[SideC]);
-
-      double[] sides = { sideA, sideB, sideC };
+      var sides = ReadTriangleSidesFromTestContext();
 
       // act
       var res = new IsoscelesTriangle(sides);
 
       // assert
+    }
+
+    private double[] ReadTriangleSidesFromTestContext()
+    {
+      double sideA = Convert.ToDouble(TestContext.DataRow[SideA]);
+      double sideB = Convert.ToDouble(TestContext.DataRow[SideB]);
+      double sideC = Convert.ToDouble(TestContext.DataRow[SideC]);
+
+      double[] sides = { sideA, sideB, sideC };
+      return sides;
     }
   }
 }
