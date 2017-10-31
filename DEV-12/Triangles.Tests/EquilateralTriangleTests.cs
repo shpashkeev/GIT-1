@@ -64,5 +64,23 @@ namespace TypeOfTriangle.Tests
 
       // assert
     }
+
+    [TestMethod]
+    [DataSource(connectionStr, "WrongType$")]
+    [ExpectedException(typeof(TriangleTypeException))]
+    public void Create_EquilateralTriangleForInvalidData_TriangleTypeException()
+    {
+      // arrange
+      double sideA = Convert.ToDouble(TestContext.DataRow["SideA"]);
+      double sideB = Convert.ToDouble(TestContext.DataRow["SideB"]);
+      double sideC = Convert.ToDouble(TestContext.DataRow["SideC"]);
+
+      double[] sides = { sideA, sideB, sideC };
+
+      // act
+      var res = new EquilateralTriangle(sides);
+
+      // assert
+    }
   }
 }
