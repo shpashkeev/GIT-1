@@ -1,7 +1,7 @@
 ﻿
 namespace TypeOfTriangle
 {
-  class EquilateralTriangleBuilder : TriangleBuilder
+  public class EquilateralTriangleBuilder : TriangleBuilder
   {
     public EquilateralTriangleBuilder(TriangleBuilder successor)
     {

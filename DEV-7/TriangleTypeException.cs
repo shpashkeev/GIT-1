@@ -2,7 +2,7 @@
 
 namespace TypeOfTriangle
 {
-  class TriangleTypeException : Exception
+  public class TriangleTypeException : Exception
   {
     public TriangleTypeException() : base() { }
   }
