@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using StaffSelection.Fellow_Workers;
 
 namespace StaffSelection
 {
   public interface ICriterionSelectable
   {
+    List<FellowWorker> Select(double currentSum, int productivity);
   }
 }
