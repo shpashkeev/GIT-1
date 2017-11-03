@@ -5,7 +5,7 @@ namespace StaffSelection
   public class StaffSelector
   {
     private double currentSum;
-    private int productivity;
+
     public ICriterionSelectable selectionCriterion;
 
     public double CurrentSum
@@ -21,10 +21,7 @@ namespace StaffSelection
       }
     }
 
-    public int Productivity
-    {
-      get { return productivity; }
-      set { productivity = value; }
-    }
+    public int Productivity { get; set; }
+
   }
 }
