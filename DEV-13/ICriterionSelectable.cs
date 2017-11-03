@@ -5,6 +5,6 @@ namespace StaffSelection
 {
   public interface ICriterionSelectable
   {
-    List<FellowWorker> Select(double currentSum, int productivity);
+    List<FellowWorker> Select(double amount, int productivity);
   }
 }

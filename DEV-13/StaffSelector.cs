@@ -4,20 +4,20 @@ namespace StaffSelection
 {
   public class StaffSelector
   {
-    private double currentSum;
+    private double amount;
 
     public ICriterionSelectable selectionCriterion;
 
-    public double CurrentSum
+    public double Amount
     {
-      get { return currentSum; }
+      get { return amount; }
       set
       {
         if (value <= 0)
         {
           throw new ArgumentException();
         }
-        currentSum = value;
+        amount = value;
       }
     }
 
