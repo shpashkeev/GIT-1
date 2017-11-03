@@ -5,7 +5,6 @@ namespace StaffSelection
   public class StaffSelector
   {
     private double amount;
-
     public ICriterionSelectable selectionCriterion;
 
     public double Amount
@@ -23,5 +22,10 @@ namespace StaffSelection
 
     public int Productivity { get; set; }
 
+    public StaffSelector(double amount, int productivity)
+    {
+      Amount = amount;
+      Productivity = productivity;
+    }
   }
 }
