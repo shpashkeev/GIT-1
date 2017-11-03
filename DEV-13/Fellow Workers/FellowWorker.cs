@@ -22,6 +22,12 @@ namespace StaffSelection.Fellow_Workers
     }
     public int Productivity { get; set; }
 
+    protected FellowWorker(double salary, int productivity)
+    {
+      Salary = salary;
+      Productivity = productivity;
+    }
+
     public abstract Qualifications GetQualification();
 
     public abstract string GetQualificationString();
