@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using StaffSelection.Fellow_Workers;
 
 namespace StaffSelection
 {
   public class StaffSelector
   {
     private double amount;
-    public ICriterionSelectable selectionCriterion;
+    public ICriterionSelectable SelectionCriterion { private get; set; }
 
     public double Amount
     {
@@ -26,6 +28,11 @@ namespace StaffSelection
     {
       Amount = amount;
       Productivity = productivity;
+    }
+
+    public List<FellowWorker> SelectFellowWorkers()
+    {
+      return SelectionCriterion.Select(Amount, Productivity);
     }
   }
 }
