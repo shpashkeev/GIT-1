@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StaffSelection.Criterions;
+using StaffSelection.Fellow_Workers;
 
 namespace StaffSelection
 {
@@ -17,6 +18,8 @@ namespace StaffSelection
     private const string Criterion1 = "1/ Maximum productivity within the amount.";
     private const string Criterion2 = "2/ Minimum cost for a fixed productivity.";
     private const string Criterion3 = "3/ Minimum number of employees is higher than Junior for fixed productivity.";
+
+    private const string Team = "Preffered Team:";
 
     public StaffSelector PackingClientPersonalData()
     {
@@ -55,19 +58,19 @@ namespace StaffSelection
           {
             case 1:
               {
-                staffSelector.selectionCriterion = new MaxProductivityCriterion();
+                staffSelector.SelectionCriterion = new MaxProductivityCriterion();
                 isCriterionNotSelected = false;
                 break;
               }
             case 2:
               {
-                staffSelector.selectionCriterion = new MinAmountCriterion();
+                staffSelector.SelectionCriterion = new MinAmountCriterion();
                 isCriterionNotSelected = false;
                 break;
               }
             case 3:
               {
-                staffSelector.selectionCriterion = new MinCountOfWorkers();
+                staffSelector.SelectionCriterion = new MinCountOfWorkers();
                 isCriterionNotSelected = false;
                 break;
               }
@@ -83,6 +86,18 @@ namespace StaffSelection
           Console.WriteLine(ClInputError);
         }
       } while (isCriterionNotSelected);
+    }
+
+    public void PrintSelectedTeam(List<FellowWorker> workers)
+    {
+      StringBuilder sb = new StringBuilder(Team);
+
+      foreach (var worker in workers)
+      {
+        sb.AppendLine(worker.GetQualificationString());
+      }
+
+      Console.WriteLine(sb);
     }
   }
 }
