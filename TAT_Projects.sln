@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectOneArrayFromN", "DEV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeOfTriangle.Tests", "TypeOfTriangle.Tests\TypeOfTriangle.Tests.csproj", "{2105BA17-1BB3-43E3-9CB7-37F7CA733A1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaffSelection", "DEV-13\StaffSelection.csproj", "{5486C575-119E-490B-9D70-6DFBE623FABE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{2105BA17-1BB3-43E3-9CB7-37F7CA733A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2105BA17-1BB3-43E3-9CB7-37F7CA733A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2105BA17-1BB3-43E3-9CB7-37F7CA733A1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5486C575-119E-490B-9D70-6DFBE623FABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5486C575-119E-490B-9D70-6DFBE623FABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5486C575-119E-490B-9D70-6DFBE623FABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5486C575-119E-490B-9D70-6DFBE623FABE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
