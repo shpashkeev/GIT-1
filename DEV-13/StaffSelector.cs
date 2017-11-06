@@ -7,6 +7,8 @@ namespace StaffSelection
   public class StaffSelector
   {
     private double amount;
+
+    public Team Staffs { get; set; }
     public ICriterionSelectable SelectionCriterion { private get; set; }
 
     public double Amount
@@ -32,7 +34,7 @@ namespace StaffSelection
 
     public void SelectFellowWorkers()
     {
-      SelectionCriterion.Select(Amount, Productivity);
+      SelectionCriterion.Select(this);
     }
   }
 }

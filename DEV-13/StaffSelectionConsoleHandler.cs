@@ -18,7 +18,7 @@ namespace StaffSelection
     private const string Criterion1 = "1/ Maximum productivity within the amount.";
     private const string Criterion2 = "2/ Minimum cost for a fixed productivity.";
     private const string Criterion3 = "3/ Minimum number of employees is higher than Junior for fixed productivity.";
-    private const string Answer = "\nAnswer: ";
+    private const string Answer = "Answer: ";
 
     private const string Team = "Preffered Team:";
 
