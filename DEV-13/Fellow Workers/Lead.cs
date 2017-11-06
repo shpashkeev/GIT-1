@@ -12,7 +12,7 @@ namespace StaffSelection.Fellow_Workers
 
     public override string GetQualificationString()
     {
-      return Iam + GetQualification();
+      return GetQualification().ToString();
     }
   }
 }

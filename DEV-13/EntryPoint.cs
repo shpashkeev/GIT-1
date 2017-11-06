@@ -41,10 +41,10 @@ namespace StaffSelection
           consoleHandler.SelectCriterion(currentSelector);
 
           // choice of employees according to the entered parameters
-          List<FellowWorker> selectedWorkers = currentSelector.SelectFellowWorkers();
+          currentSelector.SelectFellowWorkers();
 
           // print selected team
-          consoleHandler.PrintSelectedTeam(selectedWorkers);
+          //consoleHandler.PrintSelectedTeam(selectedWorkers);
 
           Console.WriteLine(Choice);
         } while (Console.ReadKey(true).Key != ConsoleKey.Escape);

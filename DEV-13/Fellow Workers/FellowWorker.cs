@@ -4,8 +4,6 @@ namespace StaffSelection.Fellow_Workers
 {
   public abstract class FellowWorker
   {
-    protected const string Iam = "I am ";
-
     private double salary;
     private int productivity;
     public double Salary

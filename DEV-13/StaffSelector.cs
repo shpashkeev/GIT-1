@@ -30,9 +30,9 @@ namespace StaffSelection
       Productivity = productivity;
     }
 
-    public List<FellowWorker> SelectFellowWorkers()
+    public void SelectFellowWorkers()
     {
-      return SelectionCriterion.Select(Amount, Productivity);
+      SelectionCriterion.Select(Amount, Productivity);
     }
   }
 }
