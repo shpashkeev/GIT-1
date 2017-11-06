@@ -9,13 +9,9 @@ namespace StaffSelection.Criterions
 {
   public class MinCountOfWorkers : ICriterionSelectable
   {
-    public List<FellowWorker> Select(double amount, int productivity)
+    public void Select(double amount, int productivity)
     {
-      double currentCost = 0.0;
-      int currentProductivity = 0;
-      List<FellowWorker> currentFellowWorkers = new List<FellowWorker>();
 
-      return currentFellowWorkers;
     }
   }
 }
