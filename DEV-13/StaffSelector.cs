@@ -2,6 +2,12 @@
 
 namespace StaffSelection
 {
+  /// <summary>
+  /// The parameters required for recruiting employees
+  /// are recorded in the appropriate fields: Amount and Productivity.
+  /// The process of selecting employees passes
+  /// according to the criterion recorded in the appropriate field.
+  /// </summary>
   public class StaffSelector
   {
     private int amount;
