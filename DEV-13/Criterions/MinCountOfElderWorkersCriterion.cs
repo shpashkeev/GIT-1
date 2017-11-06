@@ -5,7 +5,7 @@ using StaffSelection.FellowWorkers;
 
 namespace StaffSelection.Criterions
 {
-  public class MinCountOfWorkers : ICriterionSelectable
+  public class MinCountOfElderWorkersCriterion : ICriterionSelectable
   {
     public void Select(StaffSelector selector)
     {

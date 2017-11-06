@@ -70,7 +70,7 @@ namespace StaffSelection
               }
             case 3:
               {
-                staffSelector.SelectionCriterion = new MinCountOfWorkers();
+                staffSelector.SelectionCriterion = new MinCountOfElderWorkersCriterion();
                 isCriterionNotSelected = false;
                 break;
               }
