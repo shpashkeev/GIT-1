@@ -22,17 +22,17 @@ namespace StaffSelection
 
     public StaffSelector PackingClientPersonalData()
     {
-      double clientAmount;
+      int clientAmount;
       int clientProductivity;
 
       Console.Write(Amount);
-      while (!(Double.TryParse(Console.ReadLine(), out clientAmount) && clientAmount > 0))
+      while (!(int.TryParse(Console.ReadLine(), out clientAmount) && clientAmount > 0))
       {
         Console.WriteLine(ClInputError);
       }
 
       Console.Write(Productivity);
-      while (!(Int32.TryParse(Console.ReadLine(), out clientProductivity) && clientProductivity > 0))
+      while (!(int.TryParse(Console.ReadLine(), out clientProductivity) && clientProductivity > 0))
       {
         Console.WriteLine(ClInputError);
       }

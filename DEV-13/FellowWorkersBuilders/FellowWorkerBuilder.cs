@@ -6,6 +6,6 @@ namespace StaffSelection.FellowWorkersBuilders
   {
     protected FellowWorkerBuilder successor;
 
-    public abstract FellowWorker Build(double salary, int productivity);
+    public abstract FellowWorker Build(int salary, int productivity);
   }
 }

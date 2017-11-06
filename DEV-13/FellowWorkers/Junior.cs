@@ -3,7 +3,7 @@ namespace StaffSelection.FellowWorkers
 {
   public class Junior : FellowWorker
   {
-    public Junior(double salary, int productivity): base(salary, productivity) { }
+    public Junior(int salary, int productivity): base(salary, productivity) { }
 
     public override Qualifications GetQualification()
     {

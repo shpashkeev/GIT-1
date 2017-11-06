@@ -4,14 +4,14 @@ namespace StaffSelection.FellowWorkers
 {
   public abstract class FellowWorker
   {
-    private double salary;
+    private int salary;
     private int productivity;
-    public double Salary
+    public int Salary
     {
       get { return salary; }
       set
       {
-        if (value <= 0.0)
+        if (value <= 0)
         {
           throw new ArgumentException();
         }
@@ -32,7 +32,7 @@ namespace StaffSelection.FellowWorkers
       }
     }
 
-    protected FellowWorker(double salary, int productivity)
+    protected FellowWorker(int salary, int productivity)
     {
       Salary = salary;
       Productivity = productivity;

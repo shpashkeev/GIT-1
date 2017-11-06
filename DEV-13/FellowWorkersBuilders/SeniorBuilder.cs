@@ -9,7 +9,7 @@ namespace StaffSelection.FellowWorkersBuilders
       this.successor = successor;
     }
 
-    public override FellowWorker Build(double salary, int productivity)
+    public override FellowWorker Build(int salary, int productivity)
     {
       try
       {

@@ -4,12 +4,12 @@ namespace StaffSelection
 {
   public class StaffSelector
   {
-    private double amount;
+    private int amount;
 
     public Team Staffs { get; set; }
     public ICriterionSelectable SelectionCriterion { private get; set; }
 
-    public double Amount
+    public int Amount
     {
       get { return amount; }
       set
@@ -24,7 +24,7 @@ namespace StaffSelection
 
     public int Productivity { get; set; }
 
-    public StaffSelector(double amount, int productivity)
+    public StaffSelector(int amount, int productivity)
     {
       Amount = amount;
       Productivity = productivity;

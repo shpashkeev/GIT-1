@@ -3,7 +3,7 @@ namespace StaffSelection.FellowWorkers
 {
   public class Middle : FellowWorker
   {
-    public Middle(double salary, int productivity) : base(salary, productivity) { }
+    public Middle(int salary, int productivity) : base(salary, productivity) { }
 
     public override Qualifications GetQualification()
     {

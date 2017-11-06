@@ -3,7 +3,7 @@ namespace StaffSelection.FellowWorkers
 {
   public class Lead : FellowWorker
   {
-    public Lead(double salary, int productivity) : base(salary, productivity) { }
+    public Lead(int salary, int productivity) : base(salary, productivity) { }
 
     public override Qualifications GetQualification()
     {
