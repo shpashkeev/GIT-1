@@ -10,16 +10,16 @@ namespace StaffSelection.Criterions
 {
   public class MinAmountCriterion : ICriterionSelectable
   {
-    public void Select(double amount, int productivity)
+    public void Select(StaffSelector selector)
     {
       SolverContext context = SolverContext.GetContext();
       Model model = context.CreateModel();
 
       // init fellow workers
-      Junior junior = new Junior(150, 100);
-      Middle middle = new Middle(200, 150);
-      Senior senior = new Senior(400, 200);
-      Lead lead = new Lead(1000, 500);
+      Junior junior = selector.Staffs.Junior;
+      Middle middle = selector.Staffs.Middle;
+      Senior senior = selector.Staffs.Senior;
+      Lead lead = selector.Staffs.Lead;
 
       Decision juniorDecision = new Decision(Domain.IntegerNonnegative, junior.GetQualificationString());
       Decision middleDecision = new Decision(Domain.IntegerNonnegative, middle.GetQualificationString());
@@ -33,17 +33,17 @@ namespace StaffSelection.Criterions
         0 <= seniorDecision,
         0 <= leadDecision);
 
-      model.AddConstraints("maxProductivity",
-       junior.Salary * juniorDecision +
-       middle.Salary * middleDecision +
-       senior.Salary * seniorDecision +
-       lead.Salary * leadDecision == productivity);
+      model.AddConstraints("minProductivity",
+       junior.Productivity * juniorDecision +
+       middle.Productivity * middleDecision +
+       senior.Productivity * seniorDecision +
+       lead.Productivity * leadDecision >= selector.Productivity);
 
       model.AddConstraints("maxAmount",
         junior.Salary * juniorDecision +
         middle.Salary * middleDecision +
         senior.Salary * seniorDecision +
-        lead.Salary * leadDecision <= amount);
+        lead.Salary * leadDecision <= selector.Amount);
 
       model.AddGoal("cost", GoalKind.Minimize,
         junior.Salary * juniorDecision +
@@ -51,22 +51,29 @@ namespace StaffSelection.Criterions
         senior.Salary * seniorDecision +
         lead.Salary * leadDecision);
 
+      model.AddGoal("productivity", GoalKind.Maximize,
+        junior.Productivity * juniorDecision +
+        middle.Productivity * middleDecision +
+        senior.Productivity * seniorDecision +
+        lead.Productivity * leadDecision);
+
       Solution solution = context.Solve(new ConstraintProgrammingDirective());
       while (solution.Quality != SolverQuality.Infeasible)
       {
         StringBuilder sb = new StringBuilder("Solution\n");
-        sb.AppendLine($"{junior.GetQualificationString()}: {juniorDecision} ")
+        sb.Append($"{junior.GetQualificationString()}: {juniorDecision} ")
           .Append($"{middle.GetQualificationString()}: {middleDecision} ")
           .Append($"{senior.GetQualificationString()}: {seniorDecision} ")
           .Append($"{lead.GetQualificationString()}: {leadDecision} ");
         foreach (var goal in solution.Goals)
         {
-          sb.AppendLine($"{goal.Name}: {goal}");
+          sb.Append($"\n{goal.Name}: {goal}");
         }
 
         Console.WriteLine(sb);
         solution.GetNext();
       }
+      context.ClearModel();
     }
   }
 }

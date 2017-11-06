@@ -9,18 +9,17 @@ using StaffSelection.Fellow_Workers;
 namespace StaffSelection.Criterions
 {
   public class MaxProductivityCriterion : ICriterionSelectable
-
   {
-    public void Select(double amount, int productivity)
+    public void Select(StaffSelector selector)
     {
       SolverContext context = SolverContext.GetContext();
       Model model = context.CreateModel();
 
       // init fellow workers
-      Junior junior = new Junior(150, 100);
-      Middle middle = new Middle(200, 150);
-      Senior senior = new Senior(400, 200);
-      Lead lead = new Lead(1000, 500);
+      Junior junior = selector.Staffs.Junior;
+      Middle middle = selector.Staffs.Middle;
+      Senior senior = selector.Staffs.Senior;
+      Lead lead = selector.Staffs.Lead;
 
       Decision juniorDecision = new Decision(Domain.IntegerNonnegative, junior.GetQualificationString());
       Decision middleDecision = new Decision(Domain.IntegerNonnegative, middle.GetQualificationString());
@@ -38,7 +37,7 @@ namespace StaffSelection.Criterions
        junior.Salary * juniorDecision + 
        middle.Salary * middleDecision + 
        senior.Salary * seniorDecision +
-       lead.Salary * leadDecision <= amount);
+       lead.Salary * leadDecision <= selector.Amount);
 
       model.AddGoal("productivity", GoalKind.Maximize,
         junior.Productivity * juniorDecision +
@@ -50,18 +49,19 @@ namespace StaffSelection.Criterions
       while (solution.Quality != SolverQuality.Infeasible)
       {
         StringBuilder sb = new StringBuilder("Solution\n");
-        sb.AppendLine($"{junior.GetQualificationString()}: {juniorDecision} ")
+        sb.Append($"{junior.GetQualificationString()}: {juniorDecision} ")
           .Append($"{middle.GetQualificationString()}: {middleDecision} ")
           .Append($"{senior.GetQualificationString()}: {seniorDecision} ")
           .Append($"{lead.GetQualificationString()}: {leadDecision} ");
         foreach (var goal in solution.Goals)
         {
-          sb.AppendLine($"{goal.Name}: {goal}");
+          sb.AppendLine($"\n{goal.Name}: {goal}");
         }
 
         Console.WriteLine(sb);
         solution.GetNext();
       }
+      context.ClearModel();
     }
   }
 }
