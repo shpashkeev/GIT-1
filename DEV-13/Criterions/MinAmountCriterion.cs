@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using Microsoft.SolverFoundation.Services;
-using StaffSelection.Fellow_Workers;
+using StaffSelection.FellowWorkers;
 
 namespace StaffSelection.Criterions
 {

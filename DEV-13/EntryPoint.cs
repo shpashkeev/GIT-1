@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using StaffSelection.FellowWorkers;
 
 namespace StaffSelection
@@ -23,10 +22,10 @@ namespace StaffSelection
     private const int SeniorSalary = 700;
     private const int LeadSalary = 1000;
 
-    private const int JuniorProductivity = 300;
-    private const int MiddleProductivity = 500;
-    private const int SeniorProductivity = 700;
-    private const int LeadProductivity = 1000;
+    private const int JuniorProductivity = 170;
+    private const int MiddleProductivity = 340;
+    private const int SeniorProductivity = 680;
+    private const int LeadProductivity = 900;
 
     static void Main(string[] args)
     {
