@@ -6,7 +6,7 @@ namespace StaffSelection.FellowWorkersBuilders
   {
     public MiddleBuilder(FellowWorkerBuilder successor)
     {
-      this.successor = successor;
+      this.Successor = successor;
     }
     public override FellowWorker Build(int salary, int productivity)
     {
@@ -16,9 +16,9 @@ namespace StaffSelection.FellowWorkersBuilders
       }
       catch (FellowWorkerException)
       {
-        if (successor != null)
+        if (Successor != null)
         {
-          return successor.Build(salary, productivity);
+          return Successor.Build(salary, productivity);
         }
         throw new FellowWorkerException();
       }
