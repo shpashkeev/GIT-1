@@ -2,7 +2,7 @@
 
 namespace StaffSelection
 {
-  public class Team
+  public struct Team
   {
     public Junior Junior { get; set; }
     public Middle Middle { get; set; }
