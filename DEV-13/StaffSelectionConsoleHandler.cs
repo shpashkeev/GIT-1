@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 using StaffSelection.Criterions;
-using StaffSelection.FellowWorkers;
 
 namespace StaffSelection
 {
@@ -17,8 +15,6 @@ namespace StaffSelection
     private const string Criterion2 = "2/ Minimum cost for a fixed productivity.";
     private const string Criterion3 = "3/ Minimum number of employees is higher than Junior for fixed productivity.";
     private const string Answer = "Answer: ";
-
-    private const string Team = "Preffered Team:";
 
     public StaffSelector PackingClientPersonalData()
     {
@@ -86,18 +82,6 @@ namespace StaffSelection
           Console.WriteLine(ClInputError);
         }
       } while (isCriterionNotSelected);
-    }
-
-    public void PrintSelectedTeam(List<FellowWorker> workers)
-    {
-      StringBuilder sb = new StringBuilder(Team);
-
-      foreach (var worker in workers)
-      {
-        sb.AppendLine(worker.GetQualificationString());
-      }
-
-      Console.WriteLine(sb);
     }
   }
 }
