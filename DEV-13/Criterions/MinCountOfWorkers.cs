@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.SolverFoundation.Services;
 using StaffSelection.Fellow_Workers;
 
@@ -30,10 +27,10 @@ namespace StaffSelection.Criterions
         0 <= seniorDecision,
         0 <= leadDecision);
 
-      model.AddConstraints("minProductivity",
+      model.AddConstraints("fixProductivity",
        middle.Productivity * middleDecision +
        senior.Productivity * seniorDecision +
-       lead.Productivity * leadDecision >= selector.Productivity);
+       lead.Productivity * leadDecision == selector.Productivity);
 
       model.AddConstraints("maxAmount",
         middle.Salary * middleDecision +
@@ -42,10 +39,6 @@ namespace StaffSelection.Criterions
 
       model.AddGoal("count", GoalKind.Minimize,
         middleDecision + seniorDecision + leadDecision);
-      model.AddGoal("productivity", GoalKind.Maximize,
-        middle.Productivity * middleDecision +
-        senior.Productivity * seniorDecision +
-        lead.Productivity * leadDecision);
 
       Solution solution = context.Solve(new ConstraintProgrammingDirective());
       while (solution.Quality != SolverQuality.Infeasible)

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StaffSelection.Fellow_Workers
+namespace StaffSelection.FellowWorkers
 {
   public abstract class FellowWorker
   {

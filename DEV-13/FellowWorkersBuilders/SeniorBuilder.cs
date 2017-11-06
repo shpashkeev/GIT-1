@@ -1,6 +1,6 @@
-﻿using StaffSelection.Fellow_Workers;
+﻿using StaffSelection.FellowWorkers;
 
-namespace StaffSelection.Fellow_Workers_Builders
+namespace StaffSelection.FellowWorkersBuilders
 {
   class SeniorBuilder : FellowWorkerBuilder
   {

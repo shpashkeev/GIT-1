@@ -1,5 +1,5 @@
 ﻿
-namespace StaffSelection.Fellow_Workers
+namespace StaffSelection.FellowWorkers
 {
   public class Junior : FellowWorker
   {
