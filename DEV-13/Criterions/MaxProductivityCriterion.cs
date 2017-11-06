@@ -49,7 +49,7 @@ namespace StaffSelection.Criterions
       Solution solution = context.Solve(new ConstraintProgrammingDirective());
       while (solution.Quality != SolverQuality.Infeasible)
       {
-        StringBuilder sb = new StringBuilder("Solution");
+        StringBuilder sb = new StringBuilder("Solution\n");
         sb.AppendLine($"{junior.GetQualificationString()}: {juniorDecision} ")
           .Append($"{middle.GetQualificationString()}: {middleDecision} ")
           .Append($"{senior.GetQualificationString()}: {seniorDecision} ")

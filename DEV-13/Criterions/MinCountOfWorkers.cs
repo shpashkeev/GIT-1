@@ -33,7 +33,7 @@ namespace StaffSelection.Criterions
       model.AddConstraints("maxProductivity",
        middle.Salary * middleDecision +
        senior.Salary * seniorDecision +
-       lead.Salary * leadDecision <= productivity);
+       lead.Salary * leadDecision == productivity);
 
       model.AddConstraints("maxAmount",
         middle.Salary * middleDecision +
@@ -46,7 +46,7 @@ namespace StaffSelection.Criterions
       Solution solution = context.Solve(new ConstraintProgrammingDirective());
       while (solution.Quality != SolverQuality.Infeasible)
       {
-        StringBuilder sb = new StringBuilder("Solution");
+        StringBuilder sb = new StringBuilder("Solution\n");
         sb.AppendLine($"{middle.GetQualificationString()}: {middleDecision} ")
           .Append($"{senior.GetQualificationString()}: {seniorDecision} ")
           .Append($"{lead.GetQualificationString()}: {leadDecision} ");

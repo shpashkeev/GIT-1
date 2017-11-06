@@ -14,10 +14,11 @@ namespace StaffSelection
 
     private const string Amount = "Amount: ";
     private const string Productivity = "Productivity: ";
-    private const string CriterionChoice = "\n Select one of suggested criterions:\n";
+    private const string CriterionChoice = "\nSelect one of suggested criterions:\n";
     private const string Criterion1 = "1/ Maximum productivity within the amount.";
     private const string Criterion2 = "2/ Minimum cost for a fixed productivity.";
     private const string Criterion3 = "3/ Minimum number of employees is higher than Junior for fixed productivity.";
+    private const string Answer = "\nAnswer: ";
 
     private const string Team = "Preffered Team:";
 
@@ -51,6 +52,7 @@ namespace StaffSelection
       {
         Console.WriteLine(criterionsChoiceBuilder);
         int choice;
+        Console.Write(Answer);
 
         if (int.TryParse(Console.ReadLine(), out choice))
         {

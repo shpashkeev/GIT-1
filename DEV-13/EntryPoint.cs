@@ -54,6 +54,7 @@ namespace StaffSelection
       catch (Exception exc)
       {
         Console.WriteLine(exc.Message);
+        Console.ReadKey();
       }
     }
   }
