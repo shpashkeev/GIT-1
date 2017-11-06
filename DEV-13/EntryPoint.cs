@@ -3,6 +3,9 @@ using StaffSelection.FellowWorkers;
 
 namespace StaffSelection
 {
+  /// <summary>
+  /// List of qualifications
+  /// </summary>
   public enum Qualifications
   {
     Junior,
@@ -10,7 +13,13 @@ namespace StaffSelection
     Senior,
     Lead
   }
-
+  /// <summary>
+  /// Constant fields in this class
+  /// contain value of cost and productivity
+  /// of employees of the company.
+  /// Main method initializes instances of company employees
+  /// and calls a class to handle data entered by client.
+  /// </summary>
   public class EntryPoint
   {
 
@@ -27,6 +36,17 @@ namespace StaffSelection
     private const int SeniorProductivity = 680;
     private const int LeadProductivity = 900;
 
+    /// <summary>
+    /// The method creates an instance of the client's handler class
+    /// and initializes the employee structure.
+    /// After then it calls handler class methods of commands
+    /// entered by client.
+    /// After each iteration of the loop do-while,
+    /// user is asked to press a key Escape
+    /// or continue working with application
+    /// by pressing any other key.
+    /// </summary>
+    /// <param name="args"></param>
     static void Main(string[] args)
     {
       try
@@ -52,9 +72,6 @@ namespace StaffSelection
           // choice of employees according to the entered parameters
           currentSelector.SelectFellowWorkers();
 
-          // print selected team
-          //consoleHandler.PrintSelectedTeam(selectedWorkers);
-
           Console.WriteLine(Choice);
         } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
 
@@ -63,7 +80,6 @@ namespace StaffSelection
       catch (Exception exc)
       {
         Console.WriteLine(exc.Message);
-        Console.ReadKey();
       }
     }
   }
