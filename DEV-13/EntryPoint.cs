@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using StaffSelection.FellowWorkers;
 
 namespace StaffSelection
@@ -54,7 +55,7 @@ namespace StaffSelection
         Console.WriteLine(Welcome);
         StaffSelectionConsoleHandler consoleHandler = new StaffSelectionConsoleHandler();
 
-        Team staffs = new Team(
+        Staffs staffs = new Staffs(
           new Junior(JuniorSalary, JuniorProductivity),
           new Middle(MiddleSalary, MiddleProductivity),
           new Senior(SeniorSalary, SeniorProductivity),
@@ -70,7 +71,10 @@ namespace StaffSelection
           consoleHandler.SelectCriterion(currentSelector);
 
           // choice of employees according to the entered parameters
-          currentSelector.SelectFellowWorkers();
+          List<Dictionary<string, int>> result = currentSelector.SelectTeams();
+
+          // print results
+          consoleHandler.PrintTeams(result);
 
           Console.WriteLine(Choice);
         } while (Console.ReadKey(true).Key != ConsoleKey.Escape);

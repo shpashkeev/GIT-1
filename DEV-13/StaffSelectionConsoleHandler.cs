@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using StaffSelection.Criterions;
 
@@ -19,6 +20,7 @@ namespace StaffSelection
     private const string Criterion2 = "2/ Minimum cost for a fixed productivity.";
     private const string Criterion3 = "3/ Minimum number of employees is higher than Junior for fixed productivity.";
     private const string Answer = "Answer: ";
+    private const string SolutionNumber = "Solution #";
 
     /// <summary>
     /// Method packs Amount and Productivity
@@ -102,6 +104,27 @@ namespace StaffSelection
           Console.WriteLine(ClInputError);
         }
       } while (isCriterionNotSelected);
+    }
+
+    /// <summary>
+    /// Method prints the results of selecting the team of employees
+    /// </summary>
+    /// <param name="staffsList">Possible solutions for the composition of the team of employees</param>
+    public void PrintTeams(List<Dictionary<string, int>> staffsList)
+    {
+      int numberOfSolution = 0;
+      StringBuilder sb = new StringBuilder();
+
+      foreach (var solution in staffsList)
+      {
+        sb.AppendLine($"{SolutionNumber}{++numberOfSolution}");
+        foreach (var item in solution)
+        {
+          sb.Append($"\n{item.Key}: {item.Value}");
+        }
+      }
+
+      Console.WriteLine(sb);
     }
   }
 }

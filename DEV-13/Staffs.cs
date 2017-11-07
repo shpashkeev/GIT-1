@@ -2,14 +2,14 @@
 
 namespace StaffSelection
 {
-  public struct Team
+  public struct Staffs
   {
     public Junior Junior { get; set; }
     public Middle Middle { get; set; }
     public Senior Senior { get; set; }
     public Lead Lead { get; set; }
 
-    public Team(Junior junior, Middle middle, Senior senior, Lead lead)
+    public Staffs(Junior junior, Middle middle, Senior senior, Lead lead)
     {
       this.Junior = junior;
       this.Middle = middle;

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using StaffSelection.FellowWorkers;
 
 namespace StaffSelection
 {
@@ -12,8 +14,8 @@ namespace StaffSelection
   {
     private int amount;
 
-    public Team Staffs { get; set; }
-    public ICriterionSelectable SelectionCriterion { private get; set; }
+    public Staffs Staffs { get; set; }
+    public ByCriterionSelector SelectionCriterion { private get; set; }
 
     public int Amount
     {
@@ -36,9 +38,9 @@ namespace StaffSelection
       Productivity = productivity;
     }
 
-    public void SelectFellowWorkers()
+    public List<Dictionary<string, int>> SelectTeams()
     {
-      SelectionCriterion.Select(this);
+      return SelectionCriterion.Select(this);
     }
   }
 }

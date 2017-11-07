@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Collections.Generic;
 using Microsoft.SolverFoundation.Services;
 using StaffSelection.FellowWorkers;
 
@@ -8,15 +7,18 @@ namespace StaffSelection.Criterions
   /// <summary>
   /// Criterion
   /// 1/ Maximum productivity within the amount.
+  /// Is the class ByCriterionSelector inheritor
+  /// and overrides method Select according to Criterion
   /// </summary>
-  public class MaxProductivityCriterion : ICriterionSelectable
+  public class MaxProductivityCriterion : ByCriterionSelector
   {
     /// <summary>
     /// The problem of integer programming:
     /// Selection employees necessary to maximize productivity within the cash amount.
     /// </summary>
     /// <param name="selector">Contains cash amount and productivity</param>
-    public void Select(StaffSelector selector)
+    /// <returns>Possible solutions for the composition of the team of employees</returns>
+    public override List<Dictionary<string, int>> Select(StaffSelector selector)
     {
       SolverContext context = SolverContext.GetContext();
       Model model = context.CreateModel();
@@ -36,8 +38,8 @@ namespace StaffSelection.Criterions
 
       // constraint of max cash amount
       model.AddConstraints("maxCost",
-       junior.Salary * juniorDecision + 
-       middle.Salary * middleDecision + 
+       junior.Salary * juniorDecision +
+       middle.Salary * middleDecision +
        senior.Salary * seniorDecision +
        lead.Salary * leadDecision <= selector.Amount);
 
@@ -50,24 +52,22 @@ namespace StaffSelection.Criterions
 
       Solution solution = context.Solve(new ConstraintProgrammingDirective());
 
-      // print results
-      int numberOfSolution = 0;
+
+      // packing results
+      List<Dictionary<string, int>> solutionsList = new List<Dictionary<string, int>>();
+
       while (solution.Quality != SolverQuality.Infeasible)
       {
-        StringBuilder sb = new StringBuilder($"Solution #{++numberOfSolution}\n");
-        sb.Append($"{junior.GetQualificationString()}: {juniorDecision} ")
-          .Append($"{middle.GetQualificationString()}: {middleDecision} ")
-          .Append($"{senior.GetQualificationString()}: {seniorDecision} ")
-          .Append($"{lead.GetQualificationString()}: {leadDecision} ");
-        foreach (var goal in solution.Goals)
-        {
-          sb.AppendLine($"\n{goal.Name}: {goal}");
-        }
+        solutionsList.Add(PackSolutionInDictionary(new Decision[] {
+          juniorDecision,
+          middleDecision,
+          seniorDecision,
+          leadDecision }));
 
-        Console.WriteLine(sb);
         solution.GetNext();
       }
       context.ClearModel();
+      return solutionsList;
     }
   }
 }

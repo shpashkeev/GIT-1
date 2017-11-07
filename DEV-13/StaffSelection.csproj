@@ -63,10 +63,10 @@
     <Compile Include="FellowWorkers\Middle.cs" />
     <Compile Include="FellowWorkers\Senior.cs" />
     <Compile Include="FellowWorkerException.cs" />
-    <Compile Include="ICriterionSelectable.cs" />
+    <Compile Include="ByCriterionSelector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaffSelector.cs" />
-    <Compile Include="Team.cs" />
+    <Compile Include="Staffs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
