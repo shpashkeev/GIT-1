@@ -15,14 +15,6 @@ namespace StaffSelection.Tests.FellowWorkers.Tests
     }
 
     [TestMethod]
-    [ExpectedException(typeof(FellowWorkerException))]
-    public void Create_SeniorWithInvalidParams_FellowWorkerException()
-    {
-      // arrange
-      // act
-    }
-
-    [TestMethod]
     public void Create_SeniorWithValidParams_IsSenior()
     {
       // arrange
@@ -41,22 +33,6 @@ namespace StaffSelection.Tests.FellowWorkers.Tests
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
     public void Set_SeniorNegativeAndNullProductivity_ArgumentException()
-    {
-      // arrange
-      // act
-    }
-
-    [TestMethod]
-    [ExpectedException(typeof(FellowWorkerException))]
-    public void Set_SeniorInvalidSalary_FellowWorkerException()
-    {
-      // arrange
-      // act
-    }
-
-    [TestMethod]
-    [ExpectedException(typeof(FellowWorkerException))]
-    public void Set_SeniorInvalidProductivity_FellowWorkerException()
     {
       // arrange
       // act
