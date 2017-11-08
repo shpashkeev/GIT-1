@@ -13,6 +13,7 @@ namespace StaffSelection
   public class StaffSelector
   {
     private int amount;
+    private int productivity;
 
     public Staffs Staffs { get; set; }
     public ByCriterionSelector SelectionCriterion { private get; set; }
@@ -30,7 +31,18 @@ namespace StaffSelection
       }
     }
 
-    public int Productivity { get; set; }
+    public int Productivity
+    {
+      get { return productivity; }
+      set
+      {
+        if (value <= 0)
+        {
+          throw new ArgumentException();
+        }
+        productivity = value;
+      }
+    }
 
     public StaffSelector(int amount, int productivity)
     {
