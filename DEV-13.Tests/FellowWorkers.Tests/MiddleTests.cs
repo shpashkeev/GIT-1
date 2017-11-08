@@ -8,11 +8,10 @@ namespace StaffSelection.Tests.FellowWorkers.Tests
   {
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void Create_MiddleWithInvalidValues_ArgumentException()
+    public void Create_MiddleWithNegativeAndNullValues_ArgumentException()
     {
       // arrange
       // act
-
     }
 
     [TestMethod]
@@ -33,7 +32,7 @@ namespace StaffSelection.Tests.FellowWorkers.Tests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void Set_MiddleInvalidSalary_ArgumentException()
+    public void Set_MiddleNegativeAndNullSalary_ArgumentException()
     {
       // arrange
       // act
@@ -41,7 +40,23 @@ namespace StaffSelection.Tests.FellowWorkers.Tests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void Set_MiddleInvalidProductivity_ArgumentException()
+    public void Set_MiddleNegativeAndNullProductivity_ArgumentException()
+    {
+      // arrange
+      // act
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(FellowWorkerException))]
+    public void Set_MiddleInvalidSalary_FellowWorkerException()
+    {
+      // arrange
+      // act
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(FellowWorkerException))]
+    public void Set_MiddleInvalidProductivity_FellowWorkerException()
     {
       // arrange
       // act

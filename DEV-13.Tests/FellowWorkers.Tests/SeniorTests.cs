@@ -8,11 +8,10 @@ namespace StaffSelection.Tests.FellowWorkers.Tests
   {
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void Create_SeniorWithInvalidValues_ArgumentException()
+    public void Create_SeniorWithNegativeAndNullValues_ArgumentException()
     {
       // arrange
       // act
-
     }
 
     [TestMethod]
@@ -33,7 +32,7 @@ namespace StaffSelection.Tests.FellowWorkers.Tests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void Set_SeniorInvalidSalary_ArgumentException()
+    public void Set_SeniorNegativeAndNullSalary_ArgumentException()
     {
       // arrange
       // act
@@ -41,7 +40,23 @@ namespace StaffSelection.Tests.FellowWorkers.Tests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void Set_SeniorInvalidProductivity_ArgumentException()
+    public void Set_SeniorNegativeAndNullProductivity_ArgumentException()
+    {
+      // arrange
+      // act
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(FellowWorkerException))]
+    public void Set_SeniorInvalidSalary_FellowWorkerException()
+    {
+      // arrange
+      // act
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(FellowWorkerException))]
+    public void Set_SeniorInvalidProductivity_FellowWorkerException()
     {
       // arrange
       // act
