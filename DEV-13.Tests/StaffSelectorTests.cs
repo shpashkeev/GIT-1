@@ -8,7 +8,7 @@ namespace StaffSelection.Tests
   {
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void InitSelector_FromInvalidParams_ArgumentException()
+    public void Create_SelectorWithInvalidParams_ArgumentException()
     {
       // arrange
 
@@ -16,7 +16,7 @@ namespace StaffSelection.Tests
     }
 
     [TestMethod]
-    public void InitSelector_FromValidParams_IsStaffSelector()
+    public void Create_SelectorWithValidParams_IsStaffSelector()
     {
       // arrange
       // act
