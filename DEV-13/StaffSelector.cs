@@ -50,7 +50,7 @@ namespace StaffSelection
       Productivity = productivity;
     }
 
-    public List<Dictionary<string, int>> SelectTeams()
+    public List<Dictionary<FellowWorker, int>> SelectTeams()
     {
       return SelectionCriterion.Select(this);
     }

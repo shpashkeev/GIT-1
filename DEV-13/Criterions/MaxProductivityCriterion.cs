@@ -18,7 +18,7 @@ namespace StaffSelection.Criterions
     /// </summary>
     /// <param name="selector">Contains cash amount and productivity</param>
     /// <returns>Possible solutions for the composition of the team of employees</returns>
-    public override List<Dictionary<string, int>> Select(StaffSelector selector)
+    public override List<Dictionary<FellowWorker, int>> Select(StaffSelector selector)
     {
       SolverContext context = SolverContext.GetContext();
       Model model = context.CreateModel();
@@ -54,7 +54,7 @@ namespace StaffSelection.Criterions
 
 
       // packing results
-      List<Dictionary<string, int>> solutionsList = new List<Dictionary<string, int>>();
+      List<Dictionary<FellowWorker, int>> solutionsList = new List<Dictionary<FellowWorker, int>>();
 
       while (solution.Quality != SolverQuality.Infeasible)
       {
@@ -62,7 +62,7 @@ namespace StaffSelection.Criterions
           juniorDecision,
           middleDecision,
           seniorDecision,
-          leadDecision }));
+          leadDecision },selector.Staffs));
 
         solution.GetNext();
       }

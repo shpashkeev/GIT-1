@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using StaffSelection.Criterions;
+using StaffSelection.FellowWorkers;
 
 namespace StaffSelection
 {
@@ -111,7 +112,7 @@ namespace StaffSelection
     /// Method prints the results of selecting the team of employees
     /// </summary>
     /// <param name="staffsList">Possible solutions for the composition of the team of employees</param>
-    public void PrintTeams(List<Dictionary<string, int>> staffsList)
+    public void PrintTeams(List<Dictionary<FellowWorker, int>> staffsList)
     {
       int numberOfSolution = 0;
       StringBuilder sb = new StringBuilder();
@@ -121,7 +122,7 @@ namespace StaffSelection
         sb.AppendLine($"{SolutionNumber}{++numberOfSolution}");
         foreach (var item in solution)
         {
-          sb.Append($"\n{item.Key}: {item.Value}");
+          sb.Append($"\n{item.Key.GetQualificationString()}: {item.Value}");
         }
       }
       if (numberOfSolution == 0)

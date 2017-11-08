@@ -71,7 +71,7 @@ namespace StaffSelection
           consoleHandler.SelectCriterion(currentSelector);
 
           // choice of employees according to the entered parameters
-          List<Dictionary<string, int>> result = currentSelector.SelectTeams();
+          List<Dictionary<FellowWorker, int>> result = currentSelector.SelectTeams();
 
           // print results
           consoleHandler.PrintTeams(result);
