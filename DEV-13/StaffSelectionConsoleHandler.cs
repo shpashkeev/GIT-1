@@ -21,6 +21,7 @@ namespace StaffSelection
     private const string Criterion3 = "3/ Minimum number of employees is higher than Junior for fixed productivity.";
     private const string Answer = "Answer: ";
     private const string SolutionNumber = "Solution #";
+    private const string NoSolutions = "Cannot offer a solution with such parameters.";
 
     /// <summary>
     /// Method packs Amount and Productivity
@@ -123,7 +124,10 @@ namespace StaffSelection
           sb.Append($"\n{item.Key}: {item.Value}");
         }
       }
-
+      if (numberOfSolution == 0)
+      {
+        sb.Append(NoSolutions);
+      }
       Console.WriteLine(sb);
     }
   }
