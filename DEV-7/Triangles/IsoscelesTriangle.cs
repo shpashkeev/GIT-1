@@ -2,7 +2,7 @@
 
 namespace TypeOfTriangle
 {
-  class IsoscelesTriangle : Triangle
+  public class IsoscelesTriangle : Triangle
   {
     public IsoscelesTriangle(double[] sides) : base(sides)
     {
