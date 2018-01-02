@@ -2,7 +2,7 @@
 
 namespace TypeOfTriangle
 {
-  class EquilateralTriangle : Triangle
+  public class EquilateralTriangle : Triangle
   {
     public EquilateralTriangle(double[] sides) : base(sides)
     {

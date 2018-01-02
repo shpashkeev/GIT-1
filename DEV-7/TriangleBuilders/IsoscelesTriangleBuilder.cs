@@ -1,7 +1,7 @@
 ﻿
 namespace TypeOfTriangle
 {
-  class IsoscelesTriangleBuilder : TriangleBuilder
+  public class IsoscelesTriangleBuilder : TriangleBuilder
   {
     public IsoscelesTriangleBuilder(TriangleBuilder successor)
     {
