@@ -3,7 +3,9 @@
 namespace Task3
 {
   /// <summary>
-  /// 
+  /// Abstract class Triangle
+  /// with 3 sides
+  /// Perimeter and Square
   /// </summary>
   public abstract class Triangle
   {
@@ -14,11 +16,12 @@ namespace Task3
     public ISquareCalculatable SquareCalculator { get; set; }
 
     /// <summary>
-    /// 
+    /// Create triangle from 3 points in space
+    /// Check if possible creating with such points
     /// </summary>
-    /// <param name="a"></param>
-    /// <param name="b"></param>
-    /// <param name="c"></param>
+    /// <param name="a">Point A</param>
+    /// <param name="b">Point B</param>
+    /// <param name="c">Point C</param>
     protected Triangle(Point a, Point b, Point c)
     {
       Side ab = new Side(a,b);
@@ -45,27 +48,27 @@ namespace Task3
     }
 
     /// <summary>
-    /// 
+    /// Packs triangles sides in array
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Array with sides</returns>
     public Side[] GetSidesArray()
     {
       return new Side[] {AB, BC, AC};
     }
 
     /// <summary>
-    /// 
+    /// Perimeter of triangle
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Perimeter value</returns>
     public double GetPerimeter()
     {
       return AB.Length + BC.Length + AC.Length;
     }
 
     /// <summary>
-    /// 
+    /// Square of triangle calculates with helps from specific Calculator
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Square value</returns>
     public double GetSquare()
     {
       return SquareCalculator.GetSquare(this);
