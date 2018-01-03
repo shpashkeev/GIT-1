@@ -3,7 +3,8 @@
 namespace Task3
 {
   /// <summary>
-  /// 
+  /// Class describes figures side (like AB) in two-dimensional space.
+  /// Side keeps its length in field Length, which is calculated in the corresponding method
   /// </summary>
   public class Side
   {
@@ -13,7 +14,8 @@ namespace Task3
     public double Length { get; }
 
     /// <summary>
-    /// 
+    /// Sets start and end points of side
+    /// and calls calculate method for Length
     /// </summary>
     /// <param name="a"></param>
     /// <param name="b"></param>
@@ -25,11 +27,11 @@ namespace Task3
     }
 
     /// <summary>
-    /// 
+    /// Calculates length of side AB with points A and B
     /// </summary>
-    /// <param name="a"></param>
-    /// <param name="b"></param>
-    /// <returns></returns>
+    /// <param name="a">Start side point</param>
+    /// <param name="b">End side point</param>
+    /// <returns>Side length</returns>
     private double GetLength(Point a, Point b)
     {
       return Math.Pow(Math.Pow(

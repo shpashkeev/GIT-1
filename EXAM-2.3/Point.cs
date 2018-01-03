@@ -2,7 +2,7 @@
 namespace Task3
 {
   /// <summary>
-  /// 
+  /// Structure describes point in two-dimensional space
   /// </summary>
   public struct Point
   {
